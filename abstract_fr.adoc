@@ -3,18 +3,22 @@
 C'est du Cucumber 🥒 et du Kafka 🎬 🎺 🎶
 
 == Description
+Avec le monde de la Data en croissance constante, l'outil Open Source Apache Kafka est devenu incontournable grâce à ces capacités de collecte, traitement temps réel, stockage, analyse de données.
+Mais comment facilement tester toutes ces opérations dans un environnement d'intégration ?
+La solution Open Source Kapoeira tente de répondre à cette problématique.
+Il se base sur Cucumber.io et son langage normalisé Gherkin.
+Ainsi, avec un DSL simple, une description textuelle, pouvant être co-écrit pour un QA, un PO, un dev, définit à la fois une spécification, une acceptance et un test de transformation de données sur une vraie infrastructure Kafka.
+Une démonstration sera réalisée avec un Kafka Stream, transformant des aliments en hamburger, et un test Kapoeira contrôlant le bon fonctionnement. 
+Cet outil est jeune et à besoin de vos retours et de vos contributions afin de l'améliorer encore.
 
-* Kafka = brique clé dans le monde de la Data
-* il manquait un outil pour tests d'intégration
-* Proposition d'un outil open source
-* travail collaboratif, équipe de dev-QA-PO
-* outil simple
-* envie de feedback pour améliorer
-
-demo burger quizz kafka stream
-teaser ?
+// teaser ?
 
 == Full session description
+=== Pourquoi Kapoeira
+Pour son métier, Lectra a développé de nombreux Kafka Streams, reliés les uns aux autres et définissant ainsi un pipeline de traitement de données.
+Nous avions besoin de tester individuellement chaque brique.
+Unitairement, Kafka propose la librairie TopologyTestDriver qui répond parfaitement au besoin. Mais pour compléter a pyramide des tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir sur une vraie infrastructure Kafka.
+ 
 
 * inspiration Karate
 * utilisation dans notre quotidien (critère d'acceptance des stories, end to end)

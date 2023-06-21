@@ -1,2 +1,14 @@
-= 🌴 Youpi dansons la Kapoeira ?  🕺 💃
+= Kapoeira - Let's dance !
+
+== Abstract 
+link:abstract_fr.adoc[FR^]
+
+== Slides
+=== How to build HTML presentation
+----
+./build-slides.sh
+----
+
+=== Generated slides
+https://jvauchel.github.io/kapoeira-dance/[^]
 

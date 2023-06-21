@@ -1,0 +1,10 @@
+= 🌴 Youpi dansons la Kapoeira ?  🕺 💃
+
+image::images/kapoeira.gif[]
+
+== TODO 1
+image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
+
+== TODO 2
+...
+
