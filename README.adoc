@@ -1,3 +1,7 @@
 = 🌴 Sais-tu danser la Kapoeira ?  🕺 💃
 
-C'est du Cucumber 🥒 et du Kafka 🎬 🎺 🎶 
+C'est du Cucumber 🥒 et du Kafka 🎬 🎺 🎶
+
+== Description
+
+== Full session description
