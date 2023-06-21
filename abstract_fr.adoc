@@ -56,7 +56,7 @@ Nous utilisons Kapoeira dès la phase de conception de nos User Stories, afin d'
 Puis, notre QA ajoute des tests supplémentaires lors de la phase de validation (tests de non regression, tests de cas particuliers aux limites ...).
 Enfin, notre QA a également créé des tests de bout en bout, permettant de valider plusieurs streams à la fois.
 
-=== Comment puis-je utiliser Kapeira ?
+=== Comment puis-je utiliser Kapoeira ?
 
 Kapoeira et ses sources sont disponibles sur Github à cette adresse https://github.com/lectra-tech/kapoeira.
 Vous trouverez dans le ReadMe toutes les informations pour utiliser cet outil chez vous.
