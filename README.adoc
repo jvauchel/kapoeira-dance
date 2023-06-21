@@ -1,7 +1,2 @@
-= 🌴 Sais-tu danser la Kapoeira ?  🕺 💃
+= 🌴 Youpi dansons la Kapoeira ?  🕺 💃
 
-C'est du Cucumber 🥒 et du Kafka 🎬 🎺 🎶
-
-== Description
-
-== Full session description

@@ -1,0 +1,25 @@
+= 🌴 Youpi dansons la Kapoeira ?  🕺 💃
+
+C'est du Cucumber 🥒 et du Kafka 🎬 🎺 🎶
+
+== Description
+
+* Kafka = brique clé dans le monde de la Data
+* il manquait un outil pour tests d'intégration
+* Proposition d'un outil open source
+* travail collaboratif, équipe de dev-QA-PO
+* outil simple
+* envie de feedback pour améliorer
+
+demo burger quizz kafka stream
+teaser ?
+
+== Full session description
+
+* inspiration Karate
+* utilisation dans notre quotidien (critère d'acceptance des stories, end to end)
+* redescription du tech blog
+
+== Notes
+
+
