@@ -4,18 +4,18 @@
 
 == Description
 
-Avec le monde de la Data en perpétuelle croissance, l'outil Open Source Apache Kafka est devenu incontournable grâce à ces capacités de collecte, de traitement temps réel, de stockage, et d'analyse de données.
+Avec le monde de la Data en perpétuelle croissance, l'outil Open Source Apache Kafka est devenu incontournable grâce à ces capacités de collecte, de traitement temps réel, de stockage et d'analyse de données.
 
 Mais comment facilement tester toutes ces opérations dans un environnement d'intégration ?
 La solution Open Source Kapoeira tente de répondre à cette problématique.
 
-Sais-tu danser la Kapoeira ?  🎶 C'est du Cucumber 🥒 et du Kafka. 🎬 🎺
+Sais-tu danser la Kapoeira ?  🎶 C'est du Cucumber 🥒 et du Kafka ! 🎬 🎺
 
-C'est à l'aide d'un langage simple et normalisé basé sur Gherkin, qu'un test Kapoeira pourra être co-écrit par un QA, un PO ou un DEV. Il pourra servir à la fois de spécifications, de tests d'acceptance et de tests de transformation de données sur une vraie infrastructure Kafka.
+C'est à l'aide d'un langage simple et normalisé basé sur Gherkin, qu'un test automatisé Kapoeira pourra être co-écrit par un QA, un PO ou un DEV. Il pourra servir à la fois de spécification, de test d'acceptance et de test de transformation de données sur une vraie infrastructure Kafka.
 
 Burger Quizz 🍔 : venez découvrir Kapoeira à travers une démo live testant un Kafka Stream qui fabrique des hamburgers !
 
-Si tout cela vous a plu, nous serons ravis de récolter vos retours et vos contributions pour nous aider à améliorer cet outil.
+Si vous êtes intéressés, nous serons ravis de récolter vos retours et vos contributions pour nous aider à améliorer cet outil.
 
 
 == Description complète
@@ -24,31 +24,31 @@ Pour en savoir plus, n'hésitez pas à consulter les slides disponibles ici : ht
 
 === Kapoeira c'est quoi ?
 
-Nous avons développé Kapoeira, un outil de tests d'intégration de streams Kafka. Il utilise la syntaxe Gherkin afin de faciliter la lecture et l'écriture d'un test.
+Nous avons développé Kapoeira, un outil de tests d'intégration de Kafka Streams. Il utilise la syntaxe Gherkin afin de faciliter la lecture et l'écriture d'un test.
 
 === Pourquoi Kapoeira ?
 
-Pour son métier, Lectra a développé de nombreux streams Kafka, reliés les uns aux autres et définissant ainsi une pipeline de traitement de données.
+Pour son métier, Lectra a développé de nombreux Kafka Streams, reliés les uns aux autres et définissant ainsi une pipeline de traitement de données.
 Par conséquent, nous avions besoin de tester individuellement chaque brique.
 
 Unitairement, Kafka propose la librairie TopologyTestDriver qui répond parfaitement au besoin.
-Mais ce n'est pas suffisant. Pour compléter la pyramide de nos tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir sur une vraie infrastructure Kafka.
+Mais ce n'est pas suffisant. Pour compléter la pyramide de nos tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir des tests automatisés lancés par notre intégration continue et intéragissant avec une vraie infrastructure Kafka.
 Nous recherchions également un outil pouvant être utilisé par notre ingénieur QA, afin qu'il puisse enrichir notre base de tests autrement qu'avec des tests manuels.
 L'état de l'art actuel ne nous proposait pas ce type de solution.
 
 === Comment Kapoeira a commencé ?
 
 Nous avons alors pris la décision de créer un nouvel outil, et nous nous sommes inspirés de l'outil Karate, qui permet de tester des APIs HTTP.
-Il permet d'écrire des fichiers par Feature dans le langage Gherkin, un langage simple proche des spécifications métiers.
+Il permet d'écrire des fichiers par Feature dans le langage Gherkin, un langage simple proche des spécifications métier.
 
 En 2020, nous créons donc Kapoeira, écrit grâce à la librairie Cucumber-Scala, et utilisant la DSL Gherkin.
 
-Plus exactement, Kapoeira est capable de produire un message dans un topic d'entrée, et de consommer le résultat dans un topic de sortie, pour ensuite vérifier chaque champ de ce résultat.
+Plus exactement, Kapoeira est capable de produire des messages dans des topics Kafka d'entrée, de consommer le résultat dans des topics Kafka de sortie, pour ensuite vérifier ce résultat.
 
 === Un exemple ?
 
 Dans notre présentation, nous montrerons au travers d'une démo, un exemple de test Kapoeira contrôlant le bon fonctionnement d'un Kafka Stream, qui transforme des aliments en hamburger.
-Le public pourra participer à l'écriture du test afin de démontrer l'accessibilité de notre  solution.
+Le public pourra participer à l'écriture du test afin de démontrer l'accessibilité de la solution.
 
 === REX: Comment nous utilisons Kapoeira dans notre quotidien ?
 
@@ -58,10 +58,10 @@ Enfin, notre QA a également créé des tests de bout en bout, permettant de val
 
 === Comment puis-je utiliser Kapoeira ?
 
-Kapoeira et ses sources sont disponibles sur Github à cette adresse https://github.com/lectra-tech/kapoeira.
+Kapoeira et ses sources sont disponibles sur GitHub à cette adresse https://github.com/lectra-tech/kapoeira et sous DockerHub à cette adresse https://hub.docker.com/r/lectratech/kapoeira.
 Vous trouverez dans le ReadMe toutes les informations pour utiliser cet outil chez vous.
 N'hésitez pas à le tester et à nous faire vos retours.
-Vous êtes aussi invité à contribuer pour nous aider à enrichir cet outil.
+Vous êtes aussi invités à contribuer pour nous aider à enrichir cet outil.
 
 == Notes
 
