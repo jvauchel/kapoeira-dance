@@ -11,7 +11,7 @@ La solution Open Source Kapoeira tente de répondre à cette problématique.
 
 Sais-tu danser la Kapoeira ?  🎶 C'est du Cucumber 🥒 et du Kafka. 🎬 🎺
 
-C'est à l'aide d'un langage simple et normalisé basé sur Gherkin, qu'un test Kapoeira pourra être co-écrit par un QA, un PO ou un dev. Il pourra servir à la fois de spécifications, de tests d'acceptance et de test de transformation de données sur une vraie infrastructure Kafka.
+C'est à l'aide d'un langage simple et normalisé basé sur Gherkin, qu'un test Kapoeira pourra être co-écrit par un QA, un PO ou un DEV. Il pourra servir à la fois de spécifications, de tests d'acceptance et de tests de transformation de données sur une vraie infrastructure Kafka.
 
 Burger Quizz 🍔 : venez découvrir Kapoeira à travers une démo live testant un Kafka Stream qui fabrique des hamburgers !
 
@@ -33,13 +33,13 @@ Par conséquent, nous avions besoin de tester individuellement chaque brique.
 
 Unitairement, Kafka propose la librairie TopologyTestDriver qui répond parfaitement au besoin.
 Mais ce n'est pas suffisant. Pour compléter la pyramide de nos tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir sur une vraie infrastructure Kafka.
-Nous recherchions également un outil pouvant être utilisé par notre ingénieur QA, pour qu'il puisse enrichir notre base de tests autrement qu'avec des tests manuels.
+Nous recherchions également un outil pouvant être utilisé par notre ingénieur QA, afin qu'il puisse enrichir notre base de tests autrement qu'avec des tests manuels.
 L'état de l'art actuel ne nous proposait pas ce type de solution.
 
 === Comment Kapoeira a commencé ?
 
 Nous avons alors pris la décision de créer un nouvel outil, et nous nous sommes inspirés de l'outil Karate, qui permet de tester des APIs HTTP.
-Il permet d'écrire des fichiers par Feature dans le langage Gherkin, un langage simple proche des spécifications metiers.
+Il permet d'écrire des fichiers par Feature dans le langage Gherkin, un langage simple proche des spécifications métiers.
 
 En 2020, nous créons donc Kapoeira, écrit grâce à la librairie Cucumber-Scala, et utilisant la DSL Gherkin.
 
@@ -52,13 +52,13 @@ Le public pourra participer à l'écriture du test afin de démontrer l'accessib
 
 === REX: Comment nous utilisons Kapoeira dans notre quotidien ?
 
-Nous utilisons Kapoeira dès la phase de conception de nos User Stories, afin d'écrire ensemble les tests d'acceptance (Po/QA/Dev).
+Nous utilisons Kapoeira dès la phase de conception de nos User Stories, afin d'écrire ensemble les tests d'acceptance (PO/QA/DEV).
 Puis, notre QA ajoute des tests supplémentaires lors de la phase de validation (tests de non regression, tests de cas particuliers aux limites ...).
 Enfin, notre QA a également créé des tests de bout en bout, permettant de valider plusieurs streams à la fois.
 
 === Comment puis-je utiliser Kapeira ?
 
-Kapoeira et ses sources sont disponibles sur Github à cette adresse https://github.com/lectra-tech/kapoeira
+Kapoeira et ses sources sont disponibles sur Github à cette adresse https://github.com/lectra-tech/kapoeira.
 Vous trouverez dans le ReadMe toutes les informations pour utiliser cet outil chez vous.
 N'hésitez pas à le tester et à nous faire vos retours.
 Vous êtes aussi invité à contribuer pour nous aider à enrichir cet outil.
