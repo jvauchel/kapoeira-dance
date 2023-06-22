@@ -15,8 +15,7 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
   val topicBread: String = topicConf.getString("bread")
   val topicMeat: String = topicConf.getString("meat")
   val topicBurger: String = topicConf.getString("burger")
-  val topicPotato: String = topicConf.getString("potato")
-  val topicDrink: String = topicConf.getString("drink")
+  val topicSideDishes: String = topicConf.getString("side-dishes")
   val topicMeal: String = topicConf.getString("meal")
   val windowConf: Config = conf.getConfig("window")
   val windowDuration = Duration.ofSeconds(windowConf.getInt("duration"))
@@ -29,10 +28,8 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
       .stream[String, String](topicTomato)
     val meatStream = builder
       .stream[String, String](topicMeat)
-    val potatoStream = builder
-      .stream[String, String](topicPotato)
-    val drinkStream = builder
-      .stream[String, String](topicDrink)
+    val sideDishesStream = builder
+      .stream[String, String](topicSideDishes)
 
     breadStream
       .join(tomatoStream)(joinBurger, JoinWindows.of(windowDuration))
@@ -40,22 +37,20 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
       .to(topicBurger)
 
     builder.stream[String, String](topicBurger)
-      .leftJoin(potatoStream)(joinMeal, JoinWindows.of(windowDuration))
-      .leftJoin(drinkStream)(joinMeal, JoinWindows.of(windowDuration))
+      .leftJoin(sideDishesStream)(joinMeal, JoinWindows.of(windowDuration))
       .to(topicMeal)
 
   }
 
   private def joinBurger(leftEvent: String, rightEvent: String): String = {
-    val res = if (Option(rightEvent).isDefined) s"$leftEvent + $rightEvent" else leftEvent
+    val res = s"$leftEvent + $rightEvent"
     if (res == "🍞 + 🍅 + 🥩") "🍔" else res
   }
 
   private def joinMeal(leftEvent: String, rightEvent: String): String = {
     Option(rightEvent) match {
       case None => leftEvent
-      case Some("🥔") => s"$leftEvent + 🍟"
-      case _ => s"$leftEvent + $rightEvent"
+      case Some(value) => s"🛍($leftEvent + $value)".replace("🥔", "🍟")
     }
   }
 

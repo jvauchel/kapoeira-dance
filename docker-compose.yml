@@ -48,9 +48,6 @@ services:
       - "9021:9021"
     environment:
       CONTROL_CENTER_BOOTSTRAP_SERVERS: 'broker:29092'
-      CONTROL_CENTER_CONNECT_CONNECT-DEFAULT_CLUSTER: 'connect:8083'
-      CONTROL_CENTER_KSQL_KSQLDB1_URL: "http://ksqldb-server:8088"
-      CONTROL_CENTER_KSQL_KSQLDB1_ADVERTISED_URL: "http://localhost:8088"
       CONTROL_CENTER_REPLICATION_FACTOR: 1
       CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
@@ -64,4 +61,26 @@ services:
       echo Creating topics... && \
       kafka-topics --bootstrap-server broker:29092 --create --topic tomato --partitions 3 --replication-factor 1 && \
       kafka-topics --bootstrap-server broker:29092 --create --topic bread --partitions 3 --replication-factor 1 && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic burger --partitions 3 --replication-factor 1"
+      kafka-topics --bootstrap-server broker:29092 --create --topic meat --partitions 3 --replication-factor 1 && \
+      kafka-topics --bootstrap-server broker:29092 --create --topic side-dishes --partitions 3 --replication-factor 1 && \
+      kafka-topics --bootstrap-server broker:29092 --create --topic burger --partitions 3 --replication-factor 1'"
+  burger-quiz:
+    build: burger-quiz
+    container_name: burger-quiz
+    depends_on:
+      create-topics:
+        condition: service_completed_successfully
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+  kapoeira:
+    image: lectratech/kapoeira
+    container_name: kapoeira
+    depends_on:
+      burger-quiz:
+        condition: service_started
+    volumes:
+      - ./features:/features
+      - ./target/reports:/reports
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+      JAAS_AUTHENT: false

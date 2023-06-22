@@ -1,12 +1,10 @@
-import sbtassembly.Log4j2MergeStrategy
-
 lazy val root = (project in file("."))
   .enablePlugins(GitVersioning)
   .settings(
     organizationName := "jvauchel",
     organization := "io.github.jvauchel",
     name := "burger-quiz",
-    scalaVersion := "2.13.11",
+    scalaVersion := "2.13.10",
     // src
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % "1.4.4",
@@ -34,8 +32,6 @@ assembly / assemblyMergeStrategy := {
     def apply(tempDir: File, path: String, files: Seq[File]): Either[String, Seq[(File, String)]] =
       MergeStrategy.concat(tempDir, path, files.reverse)
   }
-  case PathList(ps @ _*) if ps.last == "Log4j2Plugins.dat" =>
-    Log4j2MergeStrategy.plugincache
   case x =>
     val oldStrategy = (assembly / assemblyMergeStrategy).value
     oldStrategy(x)
