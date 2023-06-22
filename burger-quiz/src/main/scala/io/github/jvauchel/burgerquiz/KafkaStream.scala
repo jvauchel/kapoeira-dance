@@ -1,4 +1,4 @@
-package io.github.jvauchel.burgerquizz
+package io.github.jvauchel.burgerquiz
 
 import com.typesafe.config.{Config, ConfigFactory}
 import com.typesafe.scalalogging.LazyLogging

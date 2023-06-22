@@ -5,7 +5,7 @@ lazy val root = (project in file("."))
   .settings(
     organizationName := "jvauchel",
     organization := "io.github.jvauchel",
-    name := "burger-quizz",
+    name := "burger-quiz",
     scalaVersion := "2.13.11",
     // src
     libraryDependencies ++= Seq(
@@ -25,7 +25,7 @@ lazy val root = (project in file("."))
 Test / parallelExecution := false
 
 // assembly config
-assembly / assemblyJarName := "burger-quizz.jar"
+assembly / assemblyJarName := "burger-quiz.jar"
 assembly / assemblyMergeStrategy := {
   case "module-info.class" => MergeStrategy.discard
   case x if x.endsWith("/module-info.class") => MergeStrategy.discard

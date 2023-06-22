@@ -35,7 +35,7 @@ RUN sbt dependencyUpdatesReport
 
 FROM eclipse-temurin:17-jre-focal as release
 
-COPY --from=builder /root/target/scala-2.13/burger-quizz.jar .
+COPY --from=builder /root/target/scala-2.13/burger-quiz.jar .
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -45,4 +45,4 @@ RUN groupadd -r myapp && useradd -r -g myapp myapp
 USER myapp
 
 ENTRYPOINT ["/tini", "--"]
-CMD ["java", "-jar", "burger-quizz.jar"]
+CMD ["java", "-jar", "burger-quiz.jar"]
