@@ -43,8 +43,12 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
   }
 
   private def joinBurger(leftEvent: String, rightEvent: String): String = {
-    val res = s"$leftEvent + $rightEvent"
-    if (res == "🍞 + 🍅 + 🥩") "🍔" else res
+    s"$leftEvent + $rightEvent" match {
+      case "🍞 + 🍅 + 🥩" => "🍔"
+      case "🍞 + 🍅 + 🍗" => "🍔"
+      case "🍞 + 🍅 + 🐟" => "🍔"
+      case other => other
+    }
   }
 
   private def joinMeal(leftEvent: String, rightEvent: String): String = {
