@@ -59,7 +59,7 @@ services:
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
       cub kafka-ready -b broker:29092 1 300 && \
       echo Creating topics... && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic tomato --partitions 3 --replication-factor 1 && \
+      kafka-topics --bootstrap-server broker:29092 --create --topic vegetable --partitions 3 --replication-factor 1 && \
       kafka-topics --bootstrap-server broker:29092 --create --topic bread --partitions 3 --replication-factor 1 && \
       kafka-topics --bootstrap-server broker:29092 --create --topic meat --partitions 3 --replication-factor 1 && \
       kafka-topics --bootstrap-server broker:29092 --create --topic side-dishes --partitions 3 --replication-factor 1 && \

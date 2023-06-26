@@ -11,7 +11,7 @@ import java.time.Duration
 object KafkaStreamBurgerQuiz extends KafkaStream {
 
   val topicConf: Config = conf.getConfig("topics")
-  val topicTomato: String = topicConf.getString("tomato")
+  val topicVegetable: String = topicConf.getString("vegetable")
   val topicBread: String = topicConf.getString("bread")
   val topicMeat: String = topicConf.getString("meat")
   val topicBurger: String = topicConf.getString("burger")
@@ -24,15 +24,15 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
 
     val breadStream = builder
       .stream[String, String](topicBread)
-    val tomatoStream = builder
-      .stream[String, String](topicTomato)
+    val vegetableStream = builder
+      .stream[String, String](topicVegetable)
     val meatStream = builder
       .stream[String, String](topicMeat)
     val sideDishesStream = builder
       .stream[String, String](topicSideDishes)
 
     breadStream
-      .join(tomatoStream)(joinBurger, JoinWindows.of(windowDuration))
+      .join(vegetableStream)(joinBurger, JoinWindows.of(windowDuration))
       .join(meatStream)(joinBurger, JoinWindows.of(windowDuration))
       .to(topicBurger)
 

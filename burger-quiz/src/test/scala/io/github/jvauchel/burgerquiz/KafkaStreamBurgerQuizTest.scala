@@ -16,7 +16,7 @@ class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with Before
   private val stringDeserializer = new StringDeserializer()
 
   private var driver: TopologyTestDriver = _
-  private var topicTomato: TestInputTopic[String, String] = _
+  private var topicVegetable: TestInputTopic[String, String] = _
   private var topicBread: TestInputTopic[String, String] = _
   private var topicMeat: TestInputTopic[String, String] = _
   private var topicBurger: TestOutputTopic[String, String] = _
@@ -42,7 +42,7 @@ class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with Before
     KafkaStreamBurgerQuiz.config.put(StreamsConfig.STATE_DIR_CONFIG, tempDir.getAbsolutePath)
     driver = new TopologyTestDriver(buildTopology(), KafkaStreamBurgerQuiz.config)
 
-    topicTomato = driver.createInputTopic(KafkaStreamBurgerQuiz.topicTomato, stringSerializer, stringSerializer)
+    topicVegetable = driver.createInputTopic(KafkaStreamBurgerQuiz.topicVegetable, stringSerializer, stringSerializer)
     topicBread = driver.createInputTopic(KafkaStreamBurgerQuiz.topicBread, stringSerializer, stringSerializer)
     topicMeat = driver.createInputTopic(KafkaStreamBurgerQuiz.topicMeat, stringSerializer, stringSerializer)
     topicBurger = driver.createOutputTopic(KafkaStreamBurgerQuiz.topicBurger, stringDeserializer, stringDeserializer)
@@ -56,15 +56,25 @@ class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with Before
   }
 
   Feature("Burger") {
-    Scenario("Join with all items") {
+    Scenario("Join with all items for a burger") {
       val hungryMan = "🤤"
 
       topicBread.pipeInput(hungryMan, "🍞")
-      topicTomato.pipeInput(hungryMan, "🍅")
+      topicVegetable.pipeInput(hungryMan, "🍅")
       topicMeat.pipeInput(hungryMan, "🥩")
 
       topicBurger.getQueueSize shouldBe 1
       topicBurger.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
+    }
+    Scenario("Join with all items for a non burger") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicVegetable.pipeInput(hungryMan, "🥕")
+      topicMeat.pipeInput(hungryMan, "🥩")
+
+      topicBurger.getQueueSize shouldBe 1
+      topicBurger.readKeyValue() shouldBe new KeyValue(hungryMan, "🍞 + 🥕 + 🥩")
     }
     Scenario("Join with incomplete items") {
       val hungryMan = "🤤"
@@ -81,7 +91,7 @@ class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with Before
       val hungryMan = "🤤"
 
       topicBread.pipeInput(hungryMan, "🍞")
-      topicTomato.pipeInput(hungryMan, "🍅")
+      topicVegetable.pipeInput(hungryMan, "🍅")
       topicMeat.pipeInput(hungryMan, "🥩")
       topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
 
@@ -93,7 +103,7 @@ class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with Before
       val hungryMan = "🤤"
 
       topicBread.pipeInput(hungryMan, "🍞")
-      topicTomato.pipeInput(hungryMan, "🍅")
+      topicVegetable.pipeInput(hungryMan, "🍅")
       topicMeat.pipeInput(hungryMan, "🥩")
       topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
 

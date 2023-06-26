@@ -1,4 +1,6 @@
 = Kapoeira - Let's dance !
+:toc:
+:icons: font
 
 == Abstract 
 link:abstract_fr.adoc[FR^]
@@ -12,3 +14,28 @@ link:abstract_fr.adoc[FR^]
 === Generated slides
 https://jvauchel.github.io/kapoeira-dance/[^]
 
+== Demo - Burger Quiz
+
+NOTE: pre-requisites : Docker & Linux
+
+Kapoeira features link:features[here^]
+
+.Build burger-quiz (with no cache)
+[source, bash]
+----
+docker compose build --no-cache
+----
+
+.Run an Kafka infrastructure & Kapoeira features
+[source, bash]
+----
+docker compose up -d
+----
+
+NOTE: Check `target/reports/kapoeira-report.html`
+
+.Re-run Kapoeira features
+[source, bash]
+----
+docker restart kapoeira
+----
