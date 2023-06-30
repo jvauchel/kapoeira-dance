@@ -20,7 +20,7 @@ Si vous êtes intéressés, nous serons ravis de récolter vos retours et vos co
 
 == Description complète
 
-Pour en savoir plus, n'hésitez pas à consulter les slides disponibles ici : https://jvauchel.github.io/kapoeira-dance/
+Pour en savoir plus, n'hésitez pas à consulter les slides et les ressources disponibles ici : https://github.com/jvauchel/kapoeira-dance
 
 === Kapoeira c'est quoi ?
 
@@ -32,7 +32,7 @@ Pour son métier, Lectra a développé de nombreux Kafka Streams, reliés les un
 Par conséquent, nous avions besoin de tester individuellement chaque brique.
 
 Unitairement, Kafka propose la librairie TopologyTestDriver qui répond parfaitement au besoin.
-Mais ce n'est pas suffisant. Pour compléter la pyramide de nos tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir des tests automatisés lancés par notre intégration continue et intéragissant avec une vraie infrastructure Kafka.
+Mais ce n'est pas suffisant. Pour compléter la pyramide de nos tests, nous avions aussi besoin de réaliser des tests d'intégration, à savoir des tests automatisés lancés par notre intégration continue et interagissant avec une vraie infrastructure Kafka.
 Nous recherchions également un outil pouvant être utilisé par notre ingénieur QA, afin qu'il puisse enrichir notre base de tests autrement qu'avec des tests manuels.
 L'état de l'art actuel ne nous proposait pas ce type de solution.
 
@@ -53,7 +53,7 @@ Le public pourra participer à l'écriture du test afin de démontrer l'accessib
 === REX: Comment nous utilisons Kapoeira dans notre quotidien ?
 
 Nous utilisons Kapoeira dès la phase de conception de nos User Stories, afin d'écrire ensemble les tests d'acceptance (PO/QA/DEV).
-Puis, notre QA ajoute des tests supplémentaires lors de la phase de validation (tests de non regression, tests de cas particuliers aux limites ...).
+Puis, notre QA ajoute des tests supplémentaires lors de la phase de validation (tests de non-régression, tests de cas particuliers aux limites ...).
 Enfin, notre QA a également créé des tests de bout en bout, permettant de valider plusieurs streams à la fois.
 
 === Comment puis-je utiliser Kapoeira ?
@@ -65,6 +65,9 @@ Vous êtes aussi invités à contribuer pour nous aider à enrichir cet outil.
 
 == Notes
 
-Nous sommes 3 co-speakers, et nous aimerions si possible vous proposer cette conférence dans un format de 45 min.
-Si ce n'est pas possible, nous nous adapterons sans problème à un format de 20 min.
+Nous sommes 4 co-speakers affiliés à la communauté NAOS (Nouvelle-Aquitaine Open Source).
+Jean-Christophe Elineau (NAOS) introduira les échanges autour de l'animation de la communauté NAOS.
+Benjamin Jean (Inno3) parlera du projet Hermine, dans lequel Lectra est partenaire.
+Johanna Vauchel (Lectra) et Mehdi Rebiai (Lectra) présenteront Kapoeira en tant que contributeurs principaux.
+
 Merci pour votre lecture.
