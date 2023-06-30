@@ -1,10 +1,45 @@
-= 🌴 Youpi dansons la Kapoeira ?  🕺 💃
+= 🌴Kapoeira🕺💃
+:source-highlighter: highlightjs
+:highlightjs-languages: bash, gherkin, javascript, json
 
 image::images/kapoeira.gif[]
 
-== TODO 1
+Tests d'intégration dans un environnement Kafka
+
+== Sommaire
+* Kapoeira
+* Syntaxe
+* Démo
+
+== Kapoeira
+
+=== Tests d'intégration dans un environnement Kafka
 image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
 
-== TODO 2
-...
+== Syntaxe
+TODO
 
+== Démo
+image::images/buger-quiz.gif[]
+
+=== Architecture
+image::diagrams/burger-quiz.svg[width=800]
+
+=== Docker commands
+----
+docker compose build --no-cache
+docker compose up -d
+docker restart kapoeira
+----
+
+=== burger.feature
+[source, gherkin]
+----
+include::features/burger.feature[]
+----
+
+=== meal.feature
+[source, gherkin]
+----
+include::features/meal.feature[]
+----
