@@ -13,8 +13,41 @@ Tests d'intégration dans un environnement Kafka
 
 == Kapoeira
 
+=== Story Telling
+* C'est quoi
+** outil TI Kafka
+
+* Pourquoi
+** tests topo driver insuffisants, pas d'outil sur le marché, QA pas outillé 
+** on recherche un outil pour communiquer en DEV/QA/PO
+
+* Histoire
+** Inspiration Karate (et Gherkin)
+** Naissance en 2020 (1ere implem naive, basé sur console-script confluent)
+** Utilisation de ZIO dès 202x (pour améloration perf)
+
+* Explication syntaxe
+** Simple d'utilisation et utilisable par tous
+
+* Utilisation
+
+* Démo
+
+* REX Kapo dans notre quotidien
+** Niveau d'adoption
+** Utilisation dès spec pour test d'acceptance
+** Facilité d'enrichissement de test apres les DEV
+** Définition de tests End2End 
+
+* Contribution
+
 === Tests d'intégration dans un environnement Kafka
 image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
+
+=== Les origines...
+* Contexte Lectra
+* Inner Source puis OpenSource
+
 
 == Syntaxe
 TODO
