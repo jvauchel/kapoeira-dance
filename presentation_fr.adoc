@@ -4,49 +4,113 @@
 
 image::images/kapoeira.gif[]
 
-Tests d'intégration dans un environnement Kafka
+// Tests d'intégration dans un environnement Kafka
 
-== Sommaire
-* Kapoeira
-* Syntaxe
-* Démo
+// == Sommaire
+// * Kapoeira
+// * Syntaxe
+// * Démo
 
-== Kapoeira
+== Kapoeira 🤔 ?
 
-=== Story Telling
-* C'est quoi
-** outil TI Kafka
+=== Integration Tests
 
-* Pourquoi
-** tests topo driver insuffisants, pas d'outil sur le marché, QA pas outillé 
-** on recherche un outil pour communiquer en DEV/QA/PO
+image::images/test-pyramid.png[width=300]
 
-* Histoire
-** Inspiration Karate (et Gherkin)
-** Naissance en 2020 (1ere implem naive, basé sur console-script confluent)
-** Utilisation de ZIO dès 202x (pour améloration perf)
+=== Kafka Stream
 
-* Explication syntaxe
-** Simple d'utilisation et utilisable par tous
+image::images/kafkalogo.jpg[width=300]
 
-* Utilisation
+=== Once upon a time
 
-* Démo
+=== Enrich and collect data
 
-* REX Kapo dans notre quotidien
-** Niveau d'adoption
-** Utilisation dès spec pour test d'acceptance
-** Facilité d'enrichissement de test apres les DEV
-** Définition de tests End2End 
+image:images/enrichData.png[width=800]
 
-* Contribution
+=== How to test ?
 
-=== Tests d'intégration dans un environnement Kafka
-image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
+https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver]
 
-=== Les origines...
-* Contexte Lectra
-* Inner Source puis OpenSource
+Fast and efficient...
+
+=== ... But
+
+[%step]
+* it did not test the integration with the Kafka cluster
+* not a tool for QA, only for dev
+* how to test several streams ?
+* how to communicate with DEV/PO/QA ?
+
+[.columns]
+=== Need a tool similar to Karate
+
+[.column]
+image:images/karate.png[width=200]
+
+[.column]
+* HTTP-based APIs
+* simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin])
+
+== Birth of Kapoeira
+
+=== 2020
+
+* Inner tool
+* console-script confluent
+
+=== 202x ZIO
+
+image:images/zio.jpeg[width=300]
+
+
+=== 2023 Open Source
+
+image:images/kapoeira_logo_text.png[width=300]
+
+== 5 minutes inside Kapoeira
+
+Cucumber Scala, using specific Gherkin DSL.
+
+image:images/cucumber.png[width=200]
+
+=== 5 minutes inside Kapoeira
+
+image:images/kapoeira-diagram.png[width=300]
+
+// === Story Telling
+// * C'est quoi
+// ** outil TI Kafka
+//
+// * Pourquoi
+// ** tests topo driver insuffisants, pas d'outil sur le marché, QA pas outillé
+// ** on recherche un outil pour communiquer en DEV/QA/PO
+
+// * Histoire
+// ** Inspiration Karate (et Gherkin)
+// ** Naissance en 2020 (1ere implem naive, basé sur console-script confluent)
+// ** Utilisation de ZIO dès 202x (pour améloration perf)
+
+// * Explication syntaxe
+// ** Simple d'utilisation et utilisable par tous
+//
+// * Utilisation
+//
+// * Démo
+//
+// * REX Kapo dans notre quotidien
+// ** Niveau d'adoption
+// ** Utilisation dès spec pour test d'acceptance
+// ** Facilité d'enrichissement de test apres les DEV
+// ** Définition de tests End2End
+//
+// * Contribution
+
+// === Tests d'intégration dans un environnement Kafka
+// image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
+//
+// === Les origines...
+// * Contexte Lectra
+// * Inner Source puis OpenSource
 
 
 == Syntaxe
