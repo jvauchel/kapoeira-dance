@@ -21,28 +21,55 @@ image::images/test-pyramid.png[width=300]
 
 image::images/kafkalogo.jpg[width=300]
 
-=== Once upon a time
+=== 🎬 Kapoeira story 📽️
 
 === Enrich and collect data
 
 image:images/enrichData.png[width=800]
 
+=== We are perfect
+
+image:images/perfect.jpg[width=800]
+
+=== NO !
+
+TODO schéma si bug ici, bug dans les streams suivants
+
+=== Solution ?
+
+TESTS
+
 === How to test ?
 
 https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver]
+
+image:images/fast.jpg[width=600]
 
 Fast and efficient...
 
 === ... But
 
-[%step]
-* it did not test the integration with the Kafka cluster
+image:images/fail.jpeg[width=600]
+
+it did not test the integration with the Kafka cluster
+
+=== ... And
+
+how to test several streams ?
+
+(individually OK but together KO)
+
+=== ... And
+
 * not a tool for QA, only for dev
-* how to test several streams ?
 * how to communicate with DEV/PO/QA ?
 
+== What do we need ?
+
+Integration tests with simple syntax
+
 [.columns]
-=== Need a tool similar to Karate
+=== Inspiration : Karate
 
 [.column]
 image:images/karate.png[width=200]
