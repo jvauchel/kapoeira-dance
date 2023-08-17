@@ -67,15 +67,38 @@ image:images/zio.jpeg[width=300]
 
 image:images/kapoeira_logo_text.png[width=300]
 
-== 5 minutes inside Kapoeira
+== Inside Kapoeira
 
 Cucumber Scala, using specific Gherkin DSL.
 
 image:images/cucumber.png[width=200]
 
-=== 5 minutes inside Kapoeira
+=== How does it work ?
 
-image:images/kapoeira-diagram.png[width=300]
+image:images/kapoeira-diagram.png[width=500]
+
+=== Example
+
+[source, gherkin]
+----
+include::features/example.feature[]
+----
+
+=== Report
+
+image:images/report.png[width=500]
+
+
+=== REX
+
+=== Advantages
+
+* simple to use
+* tool to communicate
+* documentation
+* acceptance tests
+
+== How to use ?
 
 // === Story Telling
 // * C'est quoi
@@ -113,8 +136,8 @@ image:images/kapoeira-diagram.png[width=300]
 // * Inner Source puis OpenSource
 
 
-== Syntaxe
-TODO
+// == Syntaxe
+// TODO
 
 == Démo
 image::images/buger-quiz.gif[]
