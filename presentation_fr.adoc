@@ -118,14 +118,55 @@ image:images/report.png[width=500]
 
 === REX
 
+// * REX Kapo dans notre quotidien
+// ** Niveau d'adoption
+// ** Utilisation dès spec pour test d'acceptance
+// ** Facilité d'enrichissement de test apres les DEV
+// ** Définition de tests End2End
+
 === Advantages
 
+image:images/advantages.gif[width=500]
+
+=== Advantages
+
+* test infra
 * simple to use
 * tool to communicate
 * documentation
 * acceptance tests
 
 == How to use ?
+
+image:images/banco.gif[width=500]
+
+== How to build ?
+
+----
+docker build -t kapoeira:latest .
+----
+
+== How to use ?
+
+https://hub.docker.com/r/lectratech/kapoeira[Docker Hub image]
+
+----
+docker run --rm -ti \
+-v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
+-e KAFKA_SCHEMA_REGISTRY_URL=<URL> \
+-e KAFKA_USER=<XXX> \
+-e KAFKA_PASSWORD=<****> \
+-e JAAS_AUTHENT=<true (default) | false> \
+-e LOGGING_LEVEL=<INFO (default) | ERROR | ...> \
+-e THREADS=<8 (default) | ... > \
+lectratech/kapoeira
+----
+
+== How to contribute ?
+
+TODO
 
 // === Story Telling
 // * C'est quoi
