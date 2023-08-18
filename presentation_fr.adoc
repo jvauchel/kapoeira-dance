@@ -1,6 +1,8 @@
 = 🌴Kapoeira🕺💃
 :source-highlighter: highlightjs
 :highlightjs-languages: bash, gherkin, javascript, json
+:icons: font
+
 
 image::images/kapoeira.gif[]
 
@@ -25,24 +27,27 @@ Mehdi Rebiai::
 image::images/odile.jpeg[width=400]
 
 Johanna Vauchel::
-* icon:github[] https://mrebiai.github.io/
+* icon:github[] https://jvauchel.github.io/
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra]
 
-=== 🎬 Kapoeira story 📽️
+== 🎬 Kapoeira story 📽️
 
 === Enrich and collect data
 
 image:images/enrichData.png[width=800]
 
-=== We are perfect
+=== We are perfect !
 
 image:images/perfect.jpg[width=800]
 
+=== Data is perfect !
+
+image:images/pipeline-example.png[width=800]
+
 === NO !
 
-TODO schéma si bug ici, bug dans les streams suivants
-avec mermaid
+image:images/pipeline-example-poo.png[width=800]
 
 === Solution ?
 
@@ -56,19 +61,23 @@ image:images/fast.jpg[width=600]
 
 Fast and efficient...
 
+=== Scala Test Example
 
+----
 
-=== ... But
+----
+
+=== ... But it's mock
 
 image:images/fail.jpeg[width=600]
 
 it did not test the integration with the Kafka cluster
 
-=== ... But
+=== ... But unitary
+
+image:images/end-to-end.png[width=600]
 
 how to test several streams ?
-
-(individually OK but together KO)
 
 === ... But it's not for QA
 
@@ -84,7 +93,21 @@ how to communicate with DEV/PO/QA ?
 
 == What do we need ?
 
+image:images/test-pyramid.png[width=500]
+
 Integration tests with simple syntax
+
+=== What do we need ?
+
+image:images/cesar-triangle.gif[width=600]
+
+Integration tests with simple syntax
+
+=== What do we need ?
+
+image::images/kafkalogo.jpg[width=300]
+
+Integration with Kafka Streams
 
 [.columns]
 === Inspiration : Karate
@@ -98,18 +121,6 @@ image:images/karate.png[width=200]
 * simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin])
 
 == Birth of Kapoeira
-
-=== Kapoeira 🤔 ?
-
-=== Integration Tests
-
-image::images/test-pyramid.png[width=300]
-
-=== Kafka Stream
-
-image::images/kafkalogo.jpg[width=300]
-
-
 
 === 2020
 
@@ -133,7 +144,7 @@ image:images/cucumber.png[width=200]
 
 === How does it work ?
 
-image:images/kapoeira-diagram.png[width=500]
+image:images/kapoeira-diagram.png[width=600]
 
 === Example
 
