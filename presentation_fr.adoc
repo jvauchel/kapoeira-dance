@@ -11,15 +11,23 @@ image::images/kapoeira.gif[]
 // * Syntaxe
 // * Démo
 
-== Kapoeira 🤔 ?
+== Presentation
 
-=== Integration Tests
+image::images/kara.jpeg[width=300]
 
-image::images/test-pyramid.png[width=300]
+Mehdi Rebiai::
+* icon:github[] https://github.com/mrebiai
+* icon:envelope[] mehdi.rebiai.dev@gmail.com
+* Techlead & Data engineer at https://www.lectra.com[Lectra]
 
-=== Kafka Stream
+== Presentation
 
-image::images/kafkalogo.jpg[width=300]
+image::images/odile.jpeg[width=400]
+
+Johanna Vauchel::
+* icon:github[] https://mrebiai.github.io/
+* icon:envelope[] vauchel.johanna@gmail.com
+* Data engineer at https://www.lectra.com[Lectra]
 
 === 🎬 Kapoeira story 📽️
 
@@ -34,10 +42,11 @@ image:images/perfect.jpg[width=800]
 === NO !
 
 TODO schéma si bug ici, bug dans les streams suivants
+avec mermaid
 
 === Solution ?
 
-TESTS
+TESTS !
 
 === How to test ?
 
@@ -47,22 +56,31 @@ image:images/fast.jpg[width=600]
 
 Fast and efficient...
 
+
+
 === ... But
 
 image:images/fail.jpeg[width=600]
 
 it did not test the integration with the Kafka cluster
 
-=== ... And
+=== ... But
 
 how to test several streams ?
 
 (individually OK but together KO)
 
-=== ... And
+=== ... But it's not for QA
 
-* not a tool for QA, only for dev
-* how to communicate with DEV/PO/QA ?
+image:images/les-nuls-police.gif[width=600]
+
+Listen, let's DEV do their job !
+
+=== ... But it's code
+
+image:images/simon-kara.gif[width=600]
+
+how to communicate with DEV/PO/QA ?
 
 == What do we need ?
 
@@ -76,9 +94,22 @@ image:images/karate.png[width=200]
 
 [.column]
 * HTTP-based APIs
+* Peter Thomas - 2017
 * simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin])
 
 == Birth of Kapoeira
+
+=== Kapoeira 🤔 ?
+
+=== Integration Tests
+
+image::images/test-pyramid.png[width=300]
+
+=== Kafka Stream
+
+image::images/kafkalogo.jpg[width=300]
+
+
 
 === 2020
 
@@ -110,6 +141,8 @@ image:images/kapoeira-diagram.png[width=500]
 ----
 include::features/example.feature[]
 ----
+
+// explication feature, scenario, background, .....
 
 === Report
 
