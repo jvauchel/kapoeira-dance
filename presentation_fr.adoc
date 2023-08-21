@@ -1,6 +1,6 @@
-= 🌴Kapoeira🕺💃
+= 🕺Kapoeira💃
 :source-highlighter: highlightjs
-:highlightjs-languages: bash, gherkin, javascript, json
+:highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
 
 
@@ -51,63 +51,125 @@ image:images/pipeline-example-poo.png[width=800]
 
 === Solution ?
 
-TESTS !
+TESTS OUR STREAMS!
 
 === How to test ?
 
 https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver]
 
-image:images/fast.jpg[width=600]
+image:images/fast.jpg[width=500]
 
 Fast and efficient...
 
 === Scala Test Example
 
-----
 
+[source, scala]
+----
+package com.lectra.kafka.stream.example
+
+import org.apache.kafka.common.serialization.{StringDeserializer, StringSerializer}
+import org.apache.kafka.streams._
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
+
+import java.io.File
+import java.util.UUID
+
+class KafkaStreamSelectKeyTest extends AnyFlatSpec with Matchers with BeforeAndAfterEach with BeforeAndAfterAll with GivenWhenThen {
+
+  private val stringSerializer = new StringSerializer()
+  private val stringDeserializer = new StringDeserializer()
+
+  private var driver: TopologyTestDriver = _
+  private var inputTopic: TestInputTopic[String, String] = _
+  private var outputTopic: TestOutputTopic[String, String] = _
+
+  private def tempDir: File = {
+    val ioDir = System.getProperty("java.io.tmpdir")
+    val f = new File(ioDir, "kafka-" + UUID.randomUUID().toString)
+    f.mkdirs()
+    f.deleteOnExit()
+    f
+  }
+
+  private def buildTopology(): Topology = {
+    import org.apache.kafka.streams.scala.StreamsBuilder
+    val builder = new StreamsBuilder
+    KafkaStreamSelectKey.topology(builder)
+    builder.build()
+  }
+
+  override def beforeEach(): Unit = {
+    KafkaStreamAvro.config.put(StreamsConfig.STATE_DIR_CONFIG, tempDir.getAbsolutePath)
+    driver = new TopologyTestDriver(buildTopology(), KafkaStreamSelectKey.config)
+    inputTopic = driver.createInputTopic(KafkaStreamSelectKey.topicIn, stringSerializer, stringSerializer)
+    outputTopic = driver.createOutputTopic(KafkaStreamSelectKey.topicChangedKey, stringDeserializer, stringDeserializer)
+  }
+
+  override def afterEach(): Unit = {
+    driver.close()
+  }
+
+
+  "Nominal case for select" should "change the key of records by combining key and value with -" in {
+    val key = "mykey"
+    val value = "myvalue"
+    val key2 = "yourkey"
+    val value2 = "yourvalue"
+
+    inputTopic.pipeInput(key, value)
+    inputTopic.pipeInput(key2, value2)
+    val expectedKey1 = s"$key-$value"
+    val expectedKey2 = s"$key2-$value2"
+
+    outputTopic.getQueueSize shouldBe 2
+    outputTopic.readKeyValue() shouldBe new KeyValue(expectedKey1, value)
+    outputTopic.readKeyValue() shouldBe new KeyValue(expectedKey2, value2)
+
+  }
+
+
+}
 ----
 
 === ... But it's mock
 
 image:images/fail.jpeg[width=600]
 
-it did not test the integration with the Kafka cluster
+it did not test the *integration* with the Kafka cluster
 
 === ... But unitary
 
 image:images/end-to-end.png[width=600]
 
-how to test several streams ?
+how to test *several* streams ?
 
 === ... But it's not for QA
 
-image:images/les-nuls-police.gif[width=600]
+image:images/les-nuls-police.gif[width=500]
 
-Listen, let's DEV do their job !
+Listen, let's *DEV* do their job !
 
 === ... But it's code
 
 image:images/simon-kara.gif[width=600]
 
-how to communicate with DEV/PO/QA ?
+how to *communicate* with DEV/PO/QA ?
 
 == What do we need ?
 
-image:images/test-pyramid.png[width=500]
+image:images/test-pyramid.png[width=350]
+image:images/cesar-triangle.gif[width=400]
 
-Integration tests with simple syntax
-
-=== What do we need ?
-
-image:images/cesar-triangle.gif[width=600]
-
-Integration tests with simple syntax
+*Integration* tests with *simple* syntax
 
 === What do we need ?
 
 image::images/kafkalogo.jpg[width=300]
 
-Integration with Kafka Streams
+Integration with *Kafka Streams*
 
 [.columns]
 === Inspiration : Karate
@@ -120,31 +182,50 @@ image:images/karate.png[width=200]
 * Peter Thomas - 2017
 * simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin])
 
-== Birth of Kapoeira
+== 2020 - Birth of Kapoeira
 
-=== 2020
+* Inner Source
+* Uses command lines developed by Confluent
 
-* Inner tool
-* console-script confluent
+[source, bash]
+----
+# Console producer
+kafka-console-producer \
+  --topic orders \
+  --bootstrap-server broker:9092 \
 
-=== 202x ZIO
+# Console consumer
+kafka-console-consumer \
+  --topic orders \
+  --bootstrap-server broker:9092 \
+  --from-beginning \
+----
+
+=== 2021 - ZIO
 
 image:images/zio.jpeg[width=300]
 
+To improve perfs and add parallel mode ?
 
-=== 2023 Open Source
+=== 2023 - Open Source
 
-image:images/kapoeira_logo_text.png[width=300]
+image:images/kapoeira_logo_text.png[width=200]
+
+icon:github[] https://github.com/lectra-tech/kapoeira
 
 == Inside Kapoeira
 
 Cucumber Scala, using specific Gherkin DSL.
 
-image:images/cucumber.png[width=200]
+image::images/cucumber.png[width=200]
 
 === How does it work ?
 
-image:images/kapoeira-diagram.png[width=600]
+image::images/archi.png[width=400]
+
+=== How does it work ?
+
+image::images/kapoeira-diagram.png[width=600]
 
 === Example
 
@@ -157,40 +238,40 @@ include::features/example.feature[]
 
 === Report
 
-image:images/report.png[width=500]
-
+image::images/report.png[width=450]
 
 === REX
 
-// * REX Kapo dans notre quotidien
-// ** Niveau d'adoption
-// ** Utilisation dès spec pour test d'acceptance
-// ** Facilité d'enrichissement de test apres les DEV
-// ** Définition de tests End2End
+* 👐 Big community in Lectra
+* ✏️ Easy for QA to enrich existing tests
+* 🤝 Used as acceptance tests, specifications during story grooming
+* 🔄 Used as end-to-end tests
 
+[.columns]
 === Advantages
 
-image:images/advantages.gif[width=500]
+[.column]
+image::images/advantages.gif[width=500]
 
-=== Advantages
+[%step]
+[.column]
+* Kafka infra
+* Simple to use
+* Communicate with PO/QA/DEV
+* tests as documentation
+* tests as acceptance for stories
 
-* test infra
-* simple to use
-* tool to communicate
-* documentation
-* acceptance tests
+== Want to use it ?
 
-== How to use ?
+image::images/banco.gif[width=500]
 
-image:images/banco.gif[width=500]
-
-== How to build ?
+=== How to build ?
 
 ----
 docker build -t kapoeira:latest .
 ----
 
-== How to use ?
+=== How to use ?
 
 https://hub.docker.com/r/lectratech/kapoeira[Docker Hub image]
 
@@ -208,7 +289,7 @@ docker run --rm -ti \
 lectratech/kapoeira
 ----
 
-== How to contribute ?
+=== How to contribute ?
 
 TODO
 
