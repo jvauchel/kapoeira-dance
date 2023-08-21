@@ -41,9 +41,9 @@ Coming Soon !
 
 Coming Soon !
 
-touch public/.nojekyll
-
 " >> index.adoc
+
+touch public/.nojekyll
 
 docker run --rm -u $(id -u):$(id -g) -v $(pwd):/documents asciidoctor/docker-asciidoctor:1.49.0 \
   asciidoctor -D public -o index.html index.adoc
