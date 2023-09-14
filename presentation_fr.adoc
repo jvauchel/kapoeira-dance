@@ -29,7 +29,15 @@ image::images/odile.jpeg[width=400]
 Johanna Vauchel::
 * icon:github[] https://jvauchel.github.io/
 * icon:envelope[] vauchel.johanna@gmail.com
-* Data engineer at https://www.lectra.com[Lectra]
+* Data engineer at https://www.lectra.com[Lectra] & speaker 🎤
+
+== Take Away 🎁
+
+[%step]
+* Discover a new tool to *test* your kafka streams
+* Help you in your *communication* with PO/QA/DEV
+* *Tips* to use it every day
+* Have a good time (we hope)
 
 == 🎬 Kapoeira story 📽️
 
@@ -213,6 +221,10 @@ image:images/kapoeira_logo_text.png[width=200]
 
 icon:github[] https://github.com/lectra-tech/kapoeira
 
+=== 2024 - New features
+
+Thanks to you !
+
 == Inside Kapoeira
 
 Cucumber Scala, using specific Gherkin DSL.
@@ -240,8 +252,34 @@ include::features/example.feature[]
 
 image::images/report.png[width=450]
 
+== Démo
+image::images/buger-quiz.gif[]
+
+=== Architecture
+image::diagrams/burger-quiz.svg[width=800]
+
+=== Docker commands
+----
+docker compose build --no-cache
+docker compose up -d
+docker restart kapoeira
+----
+
+=== burger.feature
+[source, gherkin]
+----
+include::features/burger.feature[]
+----
+
+=== meal.feature
+[source, gherkin]
+----
+include::features/meal.feature[]
+----
+
 === REX
 
+[%step]
 * 👐 Big community in Lectra
 * ✏️ Easy for QA to enrich existing tests
 * 🤝 Used as acceptance tests, specifications during story grooming
@@ -251,10 +289,10 @@ image::images/report.png[width=450]
 === Advantages
 
 [.column]
-image::images/advantages.gif[width=500]
+image:images/advantages.gif[width=500]
 
-[%step]
 [.column]
+[%step]
 * Kafka infra
 * Simple to use
 * Communicate with PO/QA/DEV
@@ -332,27 +370,3 @@ TODO
 // == Syntaxe
 // TODO
 
-== Démo
-image::images/buger-quiz.gif[]
-
-=== Architecture
-image::diagrams/burger-quiz.svg[width=800]
-
-=== Docker commands
-----
-docker compose build --no-cache
-docker compose up -d
-docker restart kapoeira
-----
-
-=== burger.feature
-[source, gherkin]
-----
-include::features/burger.feature[]
-----
-
-=== meal.feature
-[source, gherkin]
-----
-include::features/meal.feature[]
-----
