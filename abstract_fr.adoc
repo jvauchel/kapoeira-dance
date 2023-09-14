@@ -17,6 +17,12 @@ Burger Quiz 🍔 : venez découvrir Kapoeira à travers une démo live testant u
 
 Si vous êtes intéressés, nous serons ravis de récolter vos retours et vos contributions pour nous aider à améliorer cet outil.
 
+== short version
+
+Comment facilement tester ses traitements de données Kafka ? Grâce à la solution Open Source Kapoeira.
+A l'aide du langage normalisé Gherkin, un test automatisé Kapoeira, co-écrit par un QA/PO/DEV, pourra servir de spécification / test d'acceptance / test de transformation de données sur une vraie infrastructure Kafka.
+Burger Quiz 🍔 : venez découvrir Kapoeira à travers une démo live testant un Kafka Stream qui fabrique des hamburgers !
+
 
 == Description complète
 
