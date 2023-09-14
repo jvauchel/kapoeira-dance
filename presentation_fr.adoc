@@ -22,7 +22,7 @@ Mehdi Rebiai::
 * icon:envelope[] mehdi.rebiai.dev@gmail.com
 * Techlead & Data engineer at https://www.lectra.com[Lectra]
 
-== Presentation
+=== Presentation
 
 image::images/odile.jpeg[width=400]
 
@@ -31,7 +31,7 @@ Johanna Vauchel::
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra] & speaker 🎤
 
-== Take Away 🎁
+=== Take Away 🎁
 
 [%step]
 * Discover a new tool to *test* your kafka streams
@@ -39,7 +39,8 @@ Johanna Vauchel::
 * *Tips* to use it every day
 * Have a good time (we hope)
 
-== 🎬 Kapoeira story 📽️
+== 📽️ Kapoeira story 🎬 
+image::images/cine.gif[width=800]
 
 === Enrich and collect data
 
@@ -54,7 +55,9 @@ image:images/perfect.jpg[width=800]
 image:images/pipeline-example.png[width=800]
 
 === NO !
+image::images/no-not.gif[width=600]
 
+=== NO !
 image:images/pipeline-example-poo.png[width=800]
 
 === Solution ?
@@ -74,110 +77,41 @@ Fast and efficient...
 
 [source, scala]
 ----
-package com.lectra.kafka.stream.example
-
-import org.apache.kafka.common.serialization.{StringDeserializer, StringSerializer}
-import org.apache.kafka.streams._
-import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers
-import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
-
-import java.io.File
-import java.util.UUID
-
-class KafkaStreamSelectKeyTest extends AnyFlatSpec with Matchers with BeforeAndAfterEach with BeforeAndAfterAll with GivenWhenThen {
-
-  private val stringSerializer = new StringSerializer()
-  private val stringDeserializer = new StringDeserializer()
-
-  private var driver: TopologyTestDriver = _
-  private var inputTopic: TestInputTopic[String, String] = _
-  private var outputTopic: TestOutputTopic[String, String] = _
-
-  private def tempDir: File = {
-    val ioDir = System.getProperty("java.io.tmpdir")
-    val f = new File(ioDir, "kafka-" + UUID.randomUUID().toString)
-    f.mkdirs()
-    f.deleteOnExit()
-    f
-  }
-
-  private def buildTopology(): Topology = {
-    import org.apache.kafka.streams.scala.StreamsBuilder
-    val builder = new StreamsBuilder
-    KafkaStreamSelectKey.topology(builder)
-    builder.build()
-  }
-
-  override def beforeEach(): Unit = {
-    KafkaStreamAvro.config.put(StreamsConfig.STATE_DIR_CONFIG, tempDir.getAbsolutePath)
-    driver = new TopologyTestDriver(buildTopology(), KafkaStreamSelectKey.config)
-    inputTopic = driver.createInputTopic(KafkaStreamSelectKey.topicIn, stringSerializer, stringSerializer)
-    outputTopic = driver.createOutputTopic(KafkaStreamSelectKey.topicChangedKey, stringDeserializer, stringDeserializer)
-  }
-
-  override def afterEach(): Unit = {
-    driver.close()
-  }
-
-
-  "Nominal case for select" should "change the key of records by combining key and value with -" in {
-    val key = "mykey"
-    val value = "myvalue"
-    val key2 = "yourkey"
-    val value2 = "yourvalue"
-
-    inputTopic.pipeInput(key, value)
-    inputTopic.pipeInput(key2, value2)
-    val expectedKey1 = s"$key-$value"
-    val expectedKey2 = s"$key2-$value2"
-
-    outputTopic.getQueueSize shouldBe 2
-    outputTopic.readKeyValue() shouldBe new KeyValue(expectedKey1, value)
-    outputTopic.readKeyValue() shouldBe new KeyValue(expectedKey2, value2)
-
-  }
-
-
-}
+include::code/topology-driver.scala[]
 ----
 
-=== ... But it's mock
+=== Happy 😀...🤮
+image::images/content-vomi.gif[width=400]
+
+
+=== ... But it's a mocked infrastructure
 
 image:images/fail.jpeg[width=600]
 
-it did not test the *integration* with the Kafka cluster
+It did not test the *integration* with the Kafka cluster
 
-=== ... But unitary
+=== ... And only unit tests
 
 image:images/end-to-end.png[width=600]
 
-how to test *several* streams ?
+How to test *several* streams ?
 
-=== ... But it's not for QA
+=== ... And it's not for QA (=👮)
 
 image:images/les-nuls-police.gif[width=500]
 
-Listen, let's *DEV* do their job !
-
-=== ... But it's code
+=== ... And it's technical code
 
 image:images/simon-kara.gif[width=600]
 
-how to *communicate* with DEV/PO/QA ?
+How to *communicate* with DEV/PO/QA ?
 
 == What do we need ?
 
 image:images/test-pyramid.png[width=350]
 image:images/cesar-triangle.gif[width=400]
 
-*Integration* tests with *simple* syntax
-
-=== What do we need ?
-
-image::images/kafkalogo.jpg[width=300]
-
-Integration with *Kafka Streams*
+*Integration* tests with a *simple* syntax
 
 [.columns]
 === Inspiration : Karate
@@ -188,44 +122,15 @@ image:images/karate.png[width=200]
 [.column]
 * HTTP-based APIs
 * Peter Thomas - 2017
-* simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin])
+* Simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin^])
+* https://youtu.be/Cnma3WbKvtE?si=TXYHGSpiib9SATIJ[Talk about Karate @BdxIO2018^]
 
-== 2020 - Birth of Kapoeira
+=== Our context != HTTP
+image::images/kafkalogo.jpg[width=300]
 
-* Inner Source
-* Uses command lines developed by Confluent
+Integration with *Kafka Streams* !
 
-[source, bash]
-----
-# Console producer
-kafka-console-producer \
-  --topic orders \
-  --bootstrap-server broker:9092 \
-
-# Console consumer
-kafka-console-consumer \
-  --topic orders \
-  --bootstrap-server broker:9092 \
-  --from-beginning \
-----
-
-=== 2021 - ZIO
-
-image:images/zio.jpeg[width=300]
-
-To improve perfs and add parallel mode ?
-
-=== 2023 - Open Source
-
-image:images/kapoeira_logo_text.png[width=200]
-
-icon:github[] https://github.com/lectra-tech/kapoeira
-
-=== 2024 - New features
-
-Thanks to you !
-
-== Inside Kapoeira
+== What is Kapoeira?
 
 Cucumber Scala, using specific Gherkin DSL.
 
@@ -239,23 +144,63 @@ image::images/archi.png[width=400]
 
 image::images/kapoeira-diagram.png[width=600]
 
-=== Example
 
+=== 2020 - Birth of Kapoeira
+image::images/young-chabat.jpg[width=300]
+
+* Inner Source @Lectra
+* First syntax created with a QA
+* Backend calling Confluent CLI
+
+=== CLI...
+[source]
+----
+# Console producer
+kafka-console-producer \
+  --topic orders \
+  --bootstrap-server broker:9092 \
+
+# Console consumer
+kafka-console-consumer \
+  --topic orders \
+  --bootstrap-server broker:9092 \
+  --from-beginning
+----
+
+=== 2020 - Custom backend
+* Specific Scala implementation for Kafka Consumer/Producer
+* Better syntax with Gherkin Datatable 
+
+=== 2021 - ZIO 
+
+image:images/zio.jpeg[width=300]
+
+To improve perfs and add parallel mode ?
+
+=== 2023 - Open Source
+
+image:images/kapoeira_logo_text.png[width=200]
+
+icon:github[] https://github.com/lectra-tech/kapoeira
+
+=== 2024 - New features
+Thanks to you !
+
+[.columns]
+== Démo
+[.column]
+image::images/buger-quiz.gif[width=400]
+
+[.column]
+image::images/rapport.gif[width=500]
+
+=== Fries.feature
 [source, gherkin]
 ----
-include::features/example.feature[]
+include::features/fries.feature[]
 ----
 
-// explication feature, scenario, background, .....
-
-=== Report
-
-image::images/report.png[width=450]
-
-== Démo
-image::images/buger-quiz.gif[]
-
-=== Architecture
+=== An architecture
 image::diagrams/burger-quiz.svg[width=800]
 
 === Docker commands
@@ -277,7 +222,23 @@ include::features/burger.feature[]
 include::features/meal.feature[]
 ----
 
-=== REX
+
+
+== Advanced example
+
+[source, gherkin]
+----
+include::features/example.feature[]
+----
+
+// explication feature, scenario, background, .....
+
+=== Report
+
+image::images/report.png[width=450]
+
+
+== REX
 
 [%step]
 * 👐 Big community in Lectra

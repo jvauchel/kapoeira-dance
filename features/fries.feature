@@ -5,7 +5,7 @@ Feature: Fries 🍟 feature
       | topic  | alias     | key_type | value_type |
       | potato | potato-in | string   | string     |
     And output topic
-      | topic           | alias           | key_type | value_type | readTimeoutInSecond |
+      | topic       | alias           | key_type | value_type | readTimeoutInSecond |
       | side-dishes | side-dishes-out | string   | string     | 20                  |
     And var uuid = call function: uuid
 
