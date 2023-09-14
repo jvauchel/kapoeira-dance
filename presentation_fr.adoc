@@ -1,6 +1,6 @@
 = 🕺Kapoeira💃
-:source-highlighter: highlightjs
-:highlightjs-languages: bash, gherkin, javascript, json, scala
+:source-highlighter: rouge
+//:highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
 
 
