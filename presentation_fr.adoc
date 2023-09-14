@@ -211,6 +211,8 @@ image::images/rapport.gif[width=500]
 
 // feature à évoquer sans demo : avro/json schema, external script
 
+// demo avec QA/PO/DEV, publique, on part d'une story, on écrit le test, il marche pas (report KO), on débloque le code qui fonctionne, le report est vert
+
 === Fries.feature
 [source, gherkin]
 ----
