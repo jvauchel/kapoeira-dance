@@ -187,12 +187,29 @@ icon:github[] https://github.com/lectra-tech/kapoeira
 Thanks to you !
 
 [.columns]
-== Démo
+== Demo
 [.column]
 image::images/buger-quiz.gif[width=400]
 
 [.column]
 image::images/rapport.gif[width=500]
+
+// Note
+
+// Frite simple patate => une frite (v1 sans uuid)
+// Fichier : plusieurs patates dans un fichier => une frite par patate
+
+// Header : Mayo/ Ketchup en header => et en sortie header Mayo et Header
+
+// internal function: on ajoute le uuid
+
+// lot de records : burger mais à simplifier (side dishes à enlever
+
+// call script ?$
+
+// assertion : output = value/price ???
+
+// feature à évoquer sans demo : avro/json schema, external script
 
 === Fries.feature
 [source, gherkin]
