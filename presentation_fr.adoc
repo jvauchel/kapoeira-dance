@@ -350,3 +350,16 @@ TODO
 // == Syntaxe
 // TODO
 
+== Thank you !
+
+== Thanks for your feedback
+
+image:images/WebinarQRCode.png[width=200]
+
+icon:github[] https://jvauchel.github.io/
+
+icon:github[] https://mrebiai.github.io/
+
+icon:envelope[] vauchel.johanna@gmail.com
+
+icon:envelope[] mehdi.rebiai.dev@gmail.com
