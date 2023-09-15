@@ -136,6 +136,18 @@ Cucumber Scala, using specific Gherkin DSL.
 
 image::images/cucumber.png[width=200]
 
+=== What is Gherkin ?
+
+----
+include::features/CucumberExample.feature[]
+----
+
+=== What is Cucumber ?
+
+----
+include::code/CucumberStepDef.scala[]
+----
+
 === How does it work ?
 
 image::images/archi.png[width=400]
@@ -143,7 +155,6 @@ image::images/archi.png[width=400]
 === How does it work ?
 
 image::images/kapoeira-diagram.png[width=600]
-
 
 === 2020 - Birth of Kapoeira
 image::images/young-chabat.jpg[width=300]
