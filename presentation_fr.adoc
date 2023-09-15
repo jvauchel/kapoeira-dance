@@ -48,7 +48,7 @@ image:images/lectra-4.0.png[width=800]
 ** Partner in the https://hermine-foss.org/ project
 ** Kapoeira ...
 
-=== Take Away 🎁
+== Take Away 🎁
 
 [%step]
 * Discover a new tool to *test* your kafka streams
