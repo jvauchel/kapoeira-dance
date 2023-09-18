@@ -6,14 +6,13 @@ Feature: Fries 🍟 feature
       | potato | potato-in | string   | string     |
     And output topic
       | topic       | alias           | key_type | value_type | readTimeoutInSecond |
-      | side-dishes | side-dishes-out | string   | string     | 20                  |
-    And var uuid = call function: uuid
+      | side-dishes | side-dishes-out | string   | string     | 5                   |
 
-  Scenario: Transformation
+  Scenario: Nominal
     When records with key and value are sent
-      | topic_alias | key        | value |
-      | potato-in   | 🤤_${uuid} | 🥔    |
+      | topic_alias | key | value |
+      | potato-in   | 🤤  | 🥔    |
     Then expected records
-      | topic_alias     | key        | value  |
-      | side-dishes-out | 🤤_${uuid} | result |
+      | topic_alias     | key | value  |
+      | side-dishes-out | 🤤  | result |
     And assert result $ == "🍟"

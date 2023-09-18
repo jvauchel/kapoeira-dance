@@ -33,9 +33,9 @@ RUN sbt clean coverageOn test coverageReport coverageOff
 RUN sbt "set assembly/test := {}" assembly
 RUN sbt dependencyUpdatesReport
 
-FROM eclipse-temurin:17-jre-focal as release
+FROM eclipse-temurin:17-jre as release
 
-COPY --from=builder /root/target/scala-2.13/burger-quiz.jar .
+COPY --from=builder /root/target/scala-2.13/burger-factory.jar .
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -45,4 +45,4 @@ RUN groupadd -r myapp && useradd -r -g myapp myapp
 USER myapp
 
 ENTRYPOINT ["/tini", "--"]
-CMD ["java", "-jar", "burger-quiz.jar"]
+CMD ["java", "-jar", "burger-factory.jar"]
