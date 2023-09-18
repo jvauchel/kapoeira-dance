@@ -31,6 +31,15 @@ Johanna Vauchel::
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra^] & speaker 🎤
 
+=== Presentation
+
+image::images/darmon.jpg[width=400]
+
+François Barbe::
+* icon:github[] https://github.com/fb33
+* icon:envelope[] f.barbe@lectra.com
+* Principal Architect at https://www.lectra.com[Lectra^]
+
 == Opensource at Lectra
 
 === Lectra
@@ -237,6 +246,8 @@ image::images/rapport.gif[width=500]
 // Header : Mayo/ Ketchup en header => et en sortie header Mayo et Header
 
 // internal function: on ajoute le uuid
+
+// Tests end-to-end et batching : fries + burger factory
 
 // lot de records : burger mais à simplifier (side dishes à enlever
 

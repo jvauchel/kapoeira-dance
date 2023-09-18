@@ -10,7 +10,7 @@ est un vrai plus pour ce talk.
 On va commencer par se présenter
 - Mehdi
 - Johanna
-- François ?
+- François
 
 En sortant de ce talk, vous aurez à disposition un nouvel outil pour tester vos kafka streams.
 Vous pourrez vous appuyer sur ce nouvel outil pour communiquer entre vous, que vous soyez PO/DEV ou QA.
