@@ -20,7 +20,7 @@ image::images/kara.jpeg[width=300]
 Mehdi Rebiai::
 * icon:github[] https://github.com/mrebiai
 * icon:envelope[] mehdi.rebiai.dev@gmail.com
-* Techlead & Data engineer at https://www.lectra.com[Lectra]
+* Techlead & Data engineer at https://www.lectra.com[Lectra^]
 
 === Presentation
 
@@ -29,7 +29,7 @@ image::images/odile.jpeg[width=400]
 Johanna Vauchel::
 * icon:github[] https://jvauchel.github.io/
 * icon:envelope[] vauchel.johanna@gmail.com
-* Data engineer at https://www.lectra.com[Lectra] & speaker 🎤
+* Data engineer at https://www.lectra.com[Lectra^] & speaker 🎤
 
 == Opensource at Lectra
 
@@ -58,9 +58,17 @@ image:images/lectra-4.0.png[width=800]
 == 📽️ Kapoeira story 🎬
 image::images/cine.gif[width=800]
 
+=== Vector
+
+image:images/vector.png[width=500]
+
 === Enrich and collect data
 
 image:images/enrichData.png[width=800]
+
+=== Data pipeline
+
+image:images/data-pipeline.png[width=800]
 
 === We are perfect !
 
@@ -82,7 +90,7 @@ TESTS OUR STREAMS!
 
 === How to test ?
 
-https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver]
+https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver^]
 
 image:images/fast.jpg[width=500]
 
