@@ -238,6 +238,25 @@ image::images/buger-quiz.gif[width=400]
 [.column]
 image::images/rapport.gif[width=500]
 
+=== User Story n°1
+
+As a cooker, WHEN I send a potato to my robot, THEN I expect to have a set of delicious french fries.
+
+=== Fries.feature
+[source, gherkin]
+----
+include::features/fries.feature[]
+----
+
+=== User Story n°2
+
+As a cooker, WHEN I send potatoes to my robot, THEN I expect to have several sets of delicious french fries.
+
+=== User Story n°3
+
+As a cooker, WHEN I send a potato to my robot, with KETCHUP header request, THEN I expect to have a set of delicious french fries with KETCHUP.
+
+
 // Note
 
 // Frite simple patate => une frite (v1 sans uuid)
@@ -259,56 +278,56 @@ image::images/rapport.gif[width=500]
 
 // demo avec QA/PO/DEV, publique, on part d'une story, on écrit le test, il marche pas (report KO), on débloque le code qui fonctionne, le report est vert
 
-=== Fries.feature
-[source, gherkin]
-----
-include::features/fries.feature[]
-----
+// === Fries.feature
+// [source, gherkin]
+// ----
+// include::features/fries.feature[]
+// ----
+//
+// === An architecture
+// image::diagrams/burger-quiz.svg[width=800]
+//
+// === Docker commands
+// ----
+// docker compose build --no-cache
+// docker compose up -d
+// docker restart kapoeira
+// ----
+//
+// === burger.feature
+// [source, gherkin]
+// ----
+// include::features/burger.feature[]
+// ----
+//
+// === meal.feature
+// [source, gherkin]
+// ----
+// include::features/meal.feature[]
+// ----
+//
+//
+//
+// == Advanced example
+//
+// [source, gherkin]
+// ----
+// include::features/example.feature[]
+// ----
+//
+// // explication feature, scenario, background, .....
+//
+// === Report
+//
+// image::images/report.png[width=450]
+//
 
-=== An architecture
-image::diagrams/burger-quiz.svg[width=800]
-
-=== Docker commands
-----
-docker compose build --no-cache
-docker compose up -d
-docker restart kapoeira
-----
-
-=== burger.feature
-[source, gherkin]
-----
-include::features/burger.feature[]
-----
-
-=== meal.feature
-[source, gherkin]
-----
-include::features/meal.feature[]
-----
-
-
-
-== Advanced example
-
-[source, gherkin]
-----
-include::features/example.feature[]
-----
-
-// explication feature, scenario, background, .....
-
-=== Report
-
-image::images/report.png[width=450]
-
-
-== REX
+== 🥦 REX 🥃
 
 [%step]
 * 👐 Big community in Lectra
-* ✏️ Easy for QA to enrich existing tests
 * 🤝 Used as acceptance tests, specifications during story grooming
+* ✏️ Easy for QA to enrich existing tests
 * 🔄 Used as end-to-end tests
 
 [.columns]
@@ -397,6 +416,8 @@ TODO
 // TODO
 
 == Thank you !
+
+image::images/kapoeira.gif[]
 
 == Thanks for your feedback
 
