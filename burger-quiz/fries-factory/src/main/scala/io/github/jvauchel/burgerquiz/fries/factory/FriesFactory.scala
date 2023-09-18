@@ -19,10 +19,10 @@ object FriesFactory extends KafkaStream {
     builder
       .stream[String, String](topicPotato)
       .flatMapValues{ value => (value, implementation) match {
-          case (_, "none") => Some(value)
           case (_, "bad") => Some("🥕")
           case ("🥔", "good") => Some("🍟")
-          case (_, "good") => None
+          case (_, "good") => Some(value)
+          case (_, _) => None
         }
       }
       .to(topicSideDishes)

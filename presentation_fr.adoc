@@ -242,11 +242,11 @@ image::images/rapport.gif[width=500]
 
 As a cooker, WHEN I send a potato to my robot, THEN I expect to have a set of delicious french fries.
 
-=== Fries.feature
-[source, gherkin]
-----
-include::features/fries.feature[]
-----
+// === Fries.feature
+// [source, gherkin]
+// ----
+// include::features/fries-us1.feature[]
+// ----
 
 === User Story n°2
 
@@ -281,7 +281,7 @@ As a cooker, WHEN I send a potato to my robot, with KETCHUP header request, THEN
 // === Fries.feature
 // [source, gherkin]
 // ----
-// include::features/fries.feature[]
+// include::features/fries-us1.feature[]
 // ----
 //
 // === An architecture

@@ -52,7 +52,7 @@ class FriesFactoryTest extends AnyFeatureSpec with Matchers with BeforeAndAfterE
       When("🧑‍🍳")
       topicPotato.pipeInput(hungryMan, "🥔")
 
-      Then("🤤")
+      Then("🍟")
       topicSideDishes.getQueueSize shouldBe 1
       topicSideDishes.readKeyValue() shouldBe new KeyValue(hungryMan, "🍟")
     }
@@ -63,8 +63,9 @@ class FriesFactoryTest extends AnyFeatureSpec with Matchers with BeforeAndAfterE
       When("🧑‍🍳")
       topicPotato.pipeInput(hungryMan, "🍞")
 
-      Then("Nothing")
-      topicSideDishes.getQueueSize shouldBe 0
+      Then("🍞")
+      topicSideDishes.getQueueSize shouldBe 1
+      topicSideDishes.readKeyValue() shouldBe new KeyValue(hungryMan, "🍞")
     }
   }
 }
