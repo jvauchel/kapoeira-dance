@@ -54,7 +54,7 @@ object KafkaStreamBurgerQuiz extends KafkaStream {
   private def joinMeal(leftEvent: String, rightEvent: String): String = {
     Option(rightEvent) match {
       case None => leftEvent
-      case Some(value) => s"🛍($leftEvent + $value)".replace("🥔", "🍟")
+      case Some(value) => s"($leftEvent + $value)".replace("🥔", "🍟")
     }
   }
 

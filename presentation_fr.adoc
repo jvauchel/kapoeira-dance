@@ -1,5 +1,7 @@
 = 🕺Kapoeira💃
-:source-highlighter: rouge
+:source-highlighter: pygments
+:pygments-style: manni
+:pygments-linenums-mode: inline
 //:highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
 
@@ -108,7 +110,7 @@ Fast and efficient...
 === Scala Test Example
 
 
-[source, scala]
+[%linenums, scala]
 ----
 include::code/topology-driver.scala[]
 ----
@@ -158,7 +160,7 @@ image:images/karate.png[width=200]
 * Simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin^])
 * https://youtu.be/Cnma3WbKvtE?si=TXYHGSpiib9SATIJ[Talk about Karate @BdxIO2018^]
 
-=== Our context != HTTP
+=== Our context ≠ HTTP
 image::images/kafkalogo.jpg[width=300]
 
 Integration with *Kafka Streams* !
@@ -171,12 +173,14 @@ image::images/cucumber.png[width=200]
 
 === What is Gherkin ?
 
+[source, gherkin]
 ----
 include::features/CucumberExample.feature[]
 ----
 
 === What is Cucumber ?
 
+[source, scala]
 ----
 include::code/CucumberStepDef.scala[]
 ----
@@ -212,6 +216,7 @@ kafka-console-consumer \
 ----
 
 === 2020 - Custom backend
+image::images/scala.jpg[width=300]
 * Specific Scala implementation for Kafka Consumer/Producer
 * Better syntax with Gherkin Datatable
 
@@ -219,7 +224,9 @@ kafka-console-consumer \
 
 image:images/zio.jpeg[width=300]
 
-To improve perfs and add parallel mode ?
+* To improve perfs
+* Add parallel mode
+* Batch to manage jointure in topics
 
 === 2023 - Open Source
 
@@ -228,6 +235,9 @@ image:images/kapoeira_logo_text.png[width=200]
 icon:github[] https://github.com/lectra-tech/kapoeira
 
 === 2024 - New features
+
+image:images/simon.jpeg[width=200]
+
 Thanks to you !
 
 [.columns]
@@ -240,7 +250,7 @@ image::images/rapport.gif[width=500]
 
 === User Story n°1
 
-As a cooker, WHEN I send a potato to my robot, THEN I expect to have a set of delicious french fries.
+As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
 
 // === Fries.feature
 // [source, gherkin]
@@ -250,12 +260,19 @@ As a cooker, WHEN I send a potato to my robot, THEN I expect to have a set of de
 
 === User Story n°2
 
-As a cooker, WHEN I send potatoes to my robot, THEN I expect to have several sets of delicious french fries.
+As a 🧑‍🍳, WHEN I send 🥔🥔🥔 to my robot, THEN I expect to have 🍟🍟🍟
 
 === User Story n°3
 
-As a cooker, WHEN I send a potato to my robot, with KETCHUP header request, THEN I expect to have a set of delicious french fries with KETCHUP.
+As a 🧑‍🍳, WHEN I send 🥔 to my robot, with [.red]#KETCHUP(🍅)# header request, THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)#.
 
+=== User Story n°4
+
+As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩,🥔) in dedicated robots, THEN I expect to have a menu (🍔 + 🍟)
+
+=== Burger factory
+
+image::diagrams/burger-quiz.svg[width=800]
 
 // Note
 
@@ -331,7 +348,7 @@ As a cooker, WHEN I send a potato to my robot, with KETCHUP header request, THEN
 * 🔄 Used as end-to-end tests
 
 [.columns]
-=== Advantages
+=== Advantages 💪
 
 [.column]
 image:images/advantages.gif[width=500]
@@ -344,17 +361,17 @@ image:images/advantages.gif[width=500]
 * tests as documentation
 * tests as acceptance for stories
 
-== Want to use it ?
+== Want to use it ? 👩‍🏭
 
 image::images/banco.gif[width=500]
 
-=== How to build ?
+=== How to build ? 🔨
 
 ----
 docker build -t kapoeira:latest .
 ----
 
-=== How to use ?
+=== How to use ? ⚒️
 
 https://hub.docker.com/r/lectratech/kapoeira[Docker Hub image]
 
@@ -372,7 +389,7 @@ docker run --rm -ti \
 lectratech/kapoeira
 ----
 
-=== How to contribute ?
+=== How to contribute ? 💵
 
 TODO
 
