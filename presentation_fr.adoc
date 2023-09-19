@@ -1,10 +1,7 @@
 = 🕺Kapoeira💃
-:source-highlighter: pygments
-:pygments-style: manni
-:pygments-linenums-mode: inline
-//:highlightjs-languages: bash, gherkin, javascript, json, scala
+:source-highlighter: highlight.js
+:highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
-
 
 image::images/kapoeira.gif[]
 
@@ -110,7 +107,7 @@ Fast and efficient...
 === Scala Test Example
 
 
-[%linenums, scala]
+[source, scala]
 ----
 include::code/topology-driver.scala[]
 ----
