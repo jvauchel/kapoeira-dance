@@ -66,17 +66,16 @@ image::images/lectra-4.0.png[width=800]
 == 📽️ Kapoeira story 🎬
 image::images/cine.gif[width=800]
 
-//[.columns]
+[.columns]
 === Vector
 
-//[.column]
-image::images/vector.png[width=300]
+[.column]
+image::images/vector.png[width=400]
+[.column]
+image::images/combien.gif[width=300]
 
-* Thousands of cutters
-* Millions of events every day
-
-// [.column]
-// image::images/combien.gif[width=300]
+// * Thousands of cutters
+// * Millions of events every day
 
 === Enrich and collect data
 
@@ -263,8 +262,7 @@ As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
 // include::features/fries-us1.feature[]
 // ----
 
-=== fries-factory 
-//image::images/patate.gif[width=300,float=right]
+=== fries-factory image::images/patate.gif[width=300,float=right]
 image::diagrams/fries-factory.svg[width=800]
 
 === User Story n°2
