@@ -1,4 +1,4 @@
-= 🕺 Let's dance Kapoeira / Youpi dansons la Kapoeira ! 💃
+= 🕺 Youpi dansons la Kapoeira ! 💃
 
 Presentation of Kafka integration test tool
 

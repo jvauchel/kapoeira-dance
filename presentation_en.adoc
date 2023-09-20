@@ -66,9 +66,17 @@ image:images/lectra-4.0.png[width=800]
 == 📽️ Kapoeira story 🎬
 image::images/cine.gif[width=800]
 
+//[.columns]
 === Vector
 
-image:images/vector.png[width=500]
+//[.column]
+image:images/vector.png[width=300]
+
+* Thousands of cutters
+* Millions of events every day
+
+// [.column]
+// image::images/combien.gif[width=300]
 
 === Enrich and collect data
 
@@ -255,6 +263,10 @@ As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
 // include::features/fries-us1.feature[]
 // ----
 
+=== fries-factory 
+//image:images/patate.gif[width=300,float=right]
+image::diagrams/fries-factory.svg[width=800]
+
 === User Story n°2
 
 As a 🧑‍🍳, WHEN I send 🥔🥔🥔 to my robot, THEN I expect to have 🍟🍟🍟
@@ -265,11 +277,18 @@ As a 🧑‍🍳, WHEN I send 🥔 to my robot, with [.red]#KETCHUP(🍅)# heade
 
 === User Story n°4
 
-As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩,🥔) in dedicated robots, THEN I expect to have a menu (🍔 + 🍟)
+As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩) in dedicated robots, THEN I expect to have a menu 🍔
 
-=== Burger factory
+=== burger-factory
+image::diagrams/burger-factory.svg[width=800]
 
+=== meal-factory image:images/chewing-gum.gif[width=300,float=right]
+image::diagrams/meal-factory.svg[width=800]
+
+
+=== burger-quiz
 image::diagrams/burger-quiz.svg[width=800]
+
 
 // Note
 
