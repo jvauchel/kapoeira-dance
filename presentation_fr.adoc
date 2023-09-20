@@ -17,7 +17,7 @@ image::images/kapoeira.gif[]
 image::images/kara.jpeg[width=300]
 
 Mehdi Rebiai::
-* icon:github[] https://github.com/mrebiai
+* icon:github[] https://mrebiai.github.io/
 * icon:envelope[] mehdi.rebiai.dev@gmail.com
 * Techlead & Data engineer at https://www.lectra.com[Lectra^]
 
@@ -164,7 +164,7 @@ Integration with *Kafka Streams* !
 
 == What is Kapoeira?
 
-Cucumber Scala, using specific Gherkin DSL.
+Cucumber Scala using specific Gherkin DSL
 
 image::images/cucumber.png[width=200]
 
@@ -355,8 +355,8 @@ image:images/advantages.gif[width=500]
 * Kafka infra
 * Simple to use
 * Communicate with PO/QA/DEV
-* tests as documentation
-* tests as acceptance for stories
+* Tests as documentation
+* Tests as acceptance for stories
 
 == Want to use it ? 👩‍🏭
 
