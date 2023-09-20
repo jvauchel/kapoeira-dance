@@ -70,12 +70,13 @@ image::images/cine.gif[width=800]
 === Vector
 
 [.column]
-image::images/vector.png[width=400]
+image:images/vector.png[width=400]::
+* Thousands of cutters
+* Millions events every day
+
 [.column]
 image::images/combien.gif[width=300]
 
-// * Thousands of cutters
-// * Millions of events every day
 
 === Enrich and collect data
 
@@ -147,8 +148,7 @@ How to *communicate* with DEV/PO/QA ?
 
 == What do we need ?
 
-image::images/test-pyramid.png[width=350]
-image::images/cesar-triangle.gif[width=400]
+image:images/test-pyramid.png[width=350] image:images/cesar-triangle.gif[width=350]
 
 *Integration* tests with a *simple* syntax
 
@@ -262,7 +262,7 @@ As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
 // include::features/fries-us1.feature[]
 // ----
 
-=== fries-factory image::images/patate.gif[width=300,float=right]
+=== fries-factory image:images/patate.gif[width=300,float=right]
 image::diagrams/fries-factory.svg[width=800]
 
 === User Story n°2
@@ -280,7 +280,7 @@ As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩) in dedicated robo
 === burger-factory
 image::diagrams/burger-factory.svg[width=800]
 
-=== meal-factory image::images/chewing-gum.gif[width=300,float=right]
+=== meal-factory image:images/chewing-gum.gif[width=300,float=right]
 image::diagrams/meal-factory.svg[width=800]
 
 
