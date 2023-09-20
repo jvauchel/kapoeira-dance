@@ -2,6 +2,7 @@
 :source-highlighter: highlight.js
 :highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
+:burger-quiz-url: https://github.com/jvauchel/kapoeira-dance/blob/main/burger-quiz
 
 image::images/kapoeira.gif[]
 
@@ -13,7 +14,9 @@ image::images/kapoeira.gif[]
 // * Démo
 
 == Presentation
+image::images/hello.gif[width=500]
 
+=== Presentation
 image::images/kara.jpeg[width=300]
 
 Mehdi Rebiai::
@@ -40,6 +43,7 @@ François Barbe::
 * Principal Architect at https://www.lectra.com[Lectra^]
 
 == Opensource at Lectra
+image::images/opensource.gif[width=500]
 
 === Lectra
 image::images/lectra-4.0.png[width=800]
@@ -56,6 +60,9 @@ image::images/lectra-4.0.png[width=800]
 ** Kapoeira ...
 
 == Take Away 🎁
+image::images/take-away.gif[width=500]
+
+=== Take Away 🎁
 
 [%step]
 * Discover a new tool to *test* your kafka streams
@@ -94,11 +101,17 @@ image::images/perfect.jpg[width=800]
 
 image::images/pipeline-example.png[width=800]
 
+=== No bug in code !
+image::images/ca-tombe-bien.gif[width=600]
+
 === NO !
 image::images/no-not.gif[width=600]
 
 === NO !
 image::images/pipeline-example-poo.png[width=800]
+
+=== Data is 💩
+image::images/boucherie.gif[width=600]
 
 === Solution ?
 
@@ -202,7 +215,7 @@ image::images/young-chabat.jpg[width=300]
 
 * Inner Source @Lectra
 * First syntax created with a QA
-* Backend calling Confluent CLI
+* Cucumber calls Confluent CLI
 
 === CLI...
 [source]
@@ -219,12 +232,12 @@ kafka-console-consumer \
   --from-beginning
 ----
 
-=== 2020 - Custom backend
+=== 2020 - Scala !
 image::images/scala.jpg[width=300]
 * Specific Scala implementation for Kafka Consumer/Producer
 * Better syntax with Gherkin Datatable
 
-=== 2021 - ZIO
+=== 2021 - ZIO - https://zio.dev/
 
 image::images/zio.jpeg[width=300]
 
@@ -244,49 +257,62 @@ image::images/simon.jpeg[width=200]
 
 Thanks to you !
 
-[.columns]
 == Demo
-[.column]
-image::images/buger-quiz.gif[width=400]
-
-[.column]
-image::images/rapport.gif[width=500]
+image::images/burger-quiz.gif[width=500]
 
 === User Story n°1
 
-As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
-
-// === Fries.feature
-// [source, gherkin]
-// ----
-// include::features/fries-us1.feature[]
-// ----
+* As a 🧑‍🍳
+* GIVEN my fries-factory 
+* WHEN I send a 🥔 to it
+* THEN I expect to have 🍟
 
 === fries-factory image:images/patate.gif[width=300,float=right]
 image::diagrams/fries-factory.svg[width=800]
 
+=== User Story n°1 - Solution
+* {burger-quiz-url}/fries-factory/it/features/fries-us1.feature[1st version^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us1-uuid.feature[With uuid^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us1-outline.feature[With Scenario Outline^]
+
 === User Story n°2
 
-As a 🧑‍🍳, WHEN I send 🥔🥔🥔 to my robot, THEN I expect to have 🍟🍟🍟
+* As a 🧑‍🍳
+* GIVEN my fries-factory
+* WHEN I send 🥔🥔🥔 to it
+* THEN I expect to have 🍟🍟🍟
+
+=== User Story n°2 - Solution
+* {burger-quiz-url}/fries-factory/it/features/fries-us2-files.feature[A feature...^]
+* {burger-quiz-url}/fries-factory/it/features/records/potatoes.dat[... calling this file^]
 
 === User Story n°3
 
-As a 🧑‍🍳, WHEN I send 🥔 to my robot, with [.red]#KETCHUP(🍅)# header request, THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)#.
+* As a 🧑‍🍳
+* GIVEN my fries-factory
+* WHEN I send 🥔 to it, with [.red]#KETCHUP(🍅)# Kafka Header
+* THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)#
+
+=== User Story n°3 - Solution
+{burger-quiz-url}/fries-factory/it/features/fries-us3.feature[Here^]
 
 === User Story n°4
 
-As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩) in dedicated robots, THEN I expect to have a menu 🍔
+* As a 🧑‍🍳
+* GIVEN my burger-factory
+* WHEN I send the ingredients (🍞,🍅,🥩) to it
+* THEN I expect to have a delicious 🍔
 
-=== burger-factory
+=== burger-factory image:images/sel-poivre.gif[width=200,float=right]
 image::diagrams/burger-factory.svg[width=800]
 
 === meal-factory image:images/chewing-gum.gif[width=300,float=right]
 image::diagrams/meal-factory.svg[width=800]
 
+=== burger-quiz image:images/burger-quiz.gif[width=200,float=right]
+// TODO tests end2end
 
-=== burger-quiz
 image::diagrams/burger-quiz.svg[width=800]
-
 
 // Note
 
@@ -348,12 +374,15 @@ image::diagrams/burger-quiz.svg[width=800]
 //
 // // explication feature, scenario, background, .....
 //
-// === Report
-//
-// image::images/report.png[width=450]
-//
+=== Report
+image:images/rapport.gif[width=400] image:images/report.png[width=450]
+
 
 == 🥦 REX 🥃
+
+image::images/whisky.gif[width=500]
+
+=== (Grand) REX  image:images/red-is-dead.jpg[width=100]
 
 [%step]
 * 👐 Big community in Lectra
@@ -365,7 +394,7 @@ image::diagrams/burger-quiz.svg[width=800]
 === Advantages 💪
 
 [.column]
-image::images/advantages.gif[width=500]
+image::images/bluff.gif[width=500]
 
 [.column]
 [%step]
@@ -403,9 +432,9 @@ docker run --rm -ti \
 lectratech/kapoeira
 ----
 
-=== How to contribute ? 💵
+=== How to contribute ? 
 
-TODO
+image::images/contribute.gif[width=500]
 
 // === Story Telling
 // * C'est quoi
@@ -448,7 +477,7 @@ TODO
 
 == Thank you !
 
-image::images/kapoeira.gif[]
+image::images/cauchemar.gif[width=500]
 
 == Thanks for your feedback
 
