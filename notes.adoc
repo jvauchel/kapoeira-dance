@@ -1,0 +1,177 @@
+= preparation talk
+
+Bonjour à toutes et à tous, merci d'être venu assister à cette présentation de l'outil open source Kapoeira.
+
+Vous pouvez retrouver les slides de cette présentation en scannant ce petit QR code.
+
+
+Non, nous n'allons pas danser, (désolé!) mais nous allons vous parler de comment nous avons eu l'idée de développer ce nouvel outil.
+Et aussi comment nous l'utilisons dans notre quotidien pour tester notre pipeline de données qui s'appuie sur des Kafka streams.
+
+Il s'agit d'une conférence de niveau débutant, qui s'adresse aux DEV, aux QA, aux PO, mais la connaissance du film "la cité de la peur"
+est un vrai plus pour ce talk.
+
+On va commencer par se présenter
+- Mehdi
+- Johanna
+- François
+
+En sortant de ce talk, vous aurez à disposition un nouvel outil pour tester vos kafka streams.
+
+Vous pourrez vous appuyer sur ce nouvel outil pour communiquer entre vous, que vous soyez PO/DEV ou QA.
+
+On vous donnera les clés et astuces pour l'utiliser dans votre quotidien.
+
+Et pour finir, on espère que vous aurez passé un bon moment.
+
+
+Revenons à présent sur Kapoeira, et sur son histoire.
+
+Pour ça on doit vous parler un peu de notre travail,
+Lectra fabrique des machines qui permettent de découper du tissu, pour faire des vêtements, des meubles, des sièges de voiture.
+C'est comme des gros ciseaux mais qui ressemblent à ça ! et ça permet d'économiser bcp de tissu et de temps grâce à une
+technologie à la pointe notamment en découpant plusieurs piles de tissus à la fois.
+
+Et ces machines, c'est comme si elles avaient toutes un compte Instagram, qu'on appelle la data-collect, et elle poste ce qu'elles
+font toute la journée - je suis allumée, je découpe, je fais une pause, je suis  en panne, j'ai découpé 3m de tissu en 2 minutes etc.
+Notre travail va consister à collecter tous ces messages et à les combiner à d'autres sources d'informations, par exemple,
+le référentiel des machines du client ou les calendriers de rotation des équipes qui travaille sur la machine.
+Et on va combiner ces messages et ces infos pour sortir des KPI, comme des vitesses de découpe, des temps d'interruption par jour,
+des indices de performance, et on va mettre toutes ces infos dans une base de données en utilisant la plateforme Snowflake.
+
+Et derrière les rouages, on va retrouver la technologie Kafka, et ce qu'on appelle des Kafka streams. Ce sont des petites briques qui
+ vont nous permettre de collecter, agréger, transformer la donnée, et chacune de ces briques vont former notre pipeline de données.
+
+
+Et bien sûr, nous ne faisons jamais d'erreur, n'est-ce pas ?...
+
+Il n'y a jamais de bug dans nos kafka stream non ?
+
+En plus on pense toujours à tous les cas quand on code, c'est bien connu !
+
+C'est faux ! Nous créons des bugs, et en plus si nos données sont erronés, elles se propagent via tous les autres streams jusqu'en
+base de données.
+
+Et là pour corriger, c'est pas drôle, surtout qu'on s'en rend compte souvent trop tard.
+
+
+C'est quoi du coup la solution Kara/Odile ?
+
+Et bien ça va être de tester nos streams !
+
+Ah oui c'est bien les tests. Et pour ça Kafka nous fournit une librairie d'utilitaire, comme les topology test driver.
+
+C'est rapide efficace et pas cher ! Regardez comme c'est beau tout ce scala.
+
+Bon on est content, on peut finir le talk là dessus ?
+
+
+Ben en fait c'est pas parfait, déjà, ça s'appuie sur des streams factices, et pas sur la vraie infrastructure avec le cluster Kakfa.
+
+Tu bluffes Martoni !
+
+Et en plus, ça teste un seul stream, unitairement, mais comment on fait si on veut tester plusieurs streams,
+via des tests end to end par exemple.
+
+Bonne question
+
+Et puis là c'est bien pour les développeurs, mais les QA ils vont pas se mettre à scala pour écrire leurs tests.
+
+C'est pas faux !
+
+Ce qui me plairait c'est de pouvoir écrire un test visible par tous, QA, PO DEV qui pourrait nous aider à définir les critères
+d'acceptance des stories.
+
+Bon attends là tu en demandes beaucoup, on récapitule :
+
+J'aimerais avoir un outil qui permet à la fois d'écrire des tests d'intégration, des tests end-to-end mais avec une syntax simple
+et lisible.
+
+Et mais ça me fait beaucoup penser à Karate ça, tu connais ? C'est un framework qui permet de tester les API HTTP et qui s'appuie
+sur la syntaxe Gherkin.
+
+C'est pas mal, on pourrait peut-être s'en inspirer et le développer pour nos Kafka Streams ?
+
+Et c'est ce qu'on a fait !
+
+
+Sais-tu danser la Kapoeira, c'est du cucumber et du kafka !
+
+C'est quoi Cucumber ?
+
+Cucumber c'est l'outil qui sait lire des spécifications ou des scenarios de tests et qui va générer un rapport qui nous dit si
+le logiciel est conforme.
+
+C'est quoi Gherkin ? C'est des règles de grammaire structurées qui permettent à Cucumber de comprendre les scenarios gherkin.
+
+Comment ça marche ?
+
+Voici un exemple avec une calculatrice. Le premier test permet de calculer la somme de 2 variables, et le second la multiplication.
+Et voici la GLUE qui se trouve derrière. On va utiliser des regex pour interpreter le scenario gherkin, et ses assert.
+
+Dans notre cas, la partie cucumber sera codé en scala, Cucumber va lire la syntaxe Gherkin qu'on a défini et s'occupera de faire des appels
+à Kafka sur un véritable environnement.
+
+Lors d'un test Kapoeira, on va commencer par produire des messages dans un topic d'entrée, on laissera un peu de temps à notre kafka
+stream pour faire son travail, puis on va consommer les messages dans le topic de sortie et vérifier qu'on retrouve bien le message
+attendu.
+
+C'est ainsi qu'est né Kapoeira en 2020. On a travaillé avec notre QA pour définir un langage simple et explicite à travers des
+scenarios Gherkin (Given When Then).
+
+En première implémentation, on s'appuyait sur des appels back end à Confluent Cli pour produire et consommer dans les topics kafka.
+
+Ensuite, on est rapidement passé à du code scala et on a affiné notre syntax;
+
+En 2021, on ajoute du ZIO dans nos code scala pour ...
+
+Au fur et à mesure qu'on utilise Kapoeira dans notre quotidien, on ajoute des fonctionnalités.
+
+Et en 2023, on met Kapoeira à disposition de tout le monde.
+
+Et on espère que vous serez nombreux à utiliser et aussi améliorer notre outil.
+
+
+Assez de blabla, passons à la démo ! On va parler burger quizz, j'espère que vous avez faim.
+
+Nous allons à présent co écrire un test Kapoeira. Notre PO nous propose la User Story suivante :
+
+...
+
+Après cette magnifique démo fortement calorique, nous voulions vous faire un petit retour d'expérience.
+
+Premièrement, nous sommes plusieurs équipes à Lectra à avoir adopté Kapoeira pour nos tests d'intégration.
+Nous essayons donc de partager nos astuces entre nous.
+
+Au sein de notre équipe, on co écrit ensemble les tests d'acceptances lors des séances de conception des stories.
+ça nous permet de commencer les développements avec une idée claire de l'attendue.
+
+Ensuite les développeurs partagent au QA les cas de tests unitaires qu'ils ont écrits, et le QA s'occupe de définir tous ses tests
+avec Kapoeira.
+
+Enfin, nous avons un ensemble de tests end to end qui vérifient l'intégration des kafka streams ensemble.
+
+
+Parlons des avantages,
+
+Déjà, Kapoeira utilise la même infrastructure que nos streams, et donc le vrai cluster Kafka.
+
+Ensuite, c'est très facile à écrire, à enrichir, et à relire.
+
+Ca nous permet de communiquer et de nous mettre d'accord sur l'attendue lors des conceptions des stories.
+
+On peut avoir une approche TDD (tests first) et travailler en parallèle avec le QA.
+
+En plus les tests nous servent à la fois de documentation et d'acceptance.
+quand on se replonge dans un stream qu'on a pas touché depuis un moment, on commence toujours par regarder ses tests Kapoeira
+pour se rappeler le contexte métier.
+
+Bon j'espère qu'on vous a convaincu d'utiliser notre magnifique outil !
+
+Alors comment concrètement allez-vous faire pour l'utiliser ?
+
+Pour ça, on vous a mis à disposition une image docker, et vous pouvez la builder et l'utiliser ainsi.
+
+
+On vous remercie pour votre attention. N'hésitez pas si vous avez des questions. On attend aussi vos feedbacks sur notre talk grâce à ce QR code.
+

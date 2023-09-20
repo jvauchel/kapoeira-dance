@@ -1,0 +1,115 @@
+package io.github.jvauchel.burgerquiz
+
+
+import org.apache.kafka.common.serialization.{StringDeserializer, StringSerializer}
+import org.apache.kafka.streams._
+import org.scalatest.featurespec.AnyFeatureSpec
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
+
+import java.io.File
+import java.util.UUID
+
+class KafkaStreamBurgerQuizTest extends AnyFeatureSpec with Matchers with BeforeAndAfterEach with BeforeAndAfterAll with GivenWhenThen {
+
+  private val stringSerializer = new StringSerializer()
+  private val stringDeserializer = new StringDeserializer()
+
+  private var driver: TopologyTestDriver = _
+  private var topicVegetable: TestInputTopic[String, String] = _
+  private var topicBread: TestInputTopic[String, String] = _
+  private var topicMeat: TestInputTopic[String, String] = _
+  private var topicBurger: TestOutputTopic[String, String] = _
+  private var topicSideDishes: TestInputTopic[String, String] = _
+  private var topicMeal: TestOutputTopic[String, String] = _
+
+  private def tempDir: File = {
+    val ioDir = System.getProperty("java.io.tmpdir")
+    val f = new File(ioDir, "kafka-" + UUID.randomUUID().toString)
+    f.mkdirs()
+    f.deleteOnExit()
+    f
+  }
+
+  private def buildTopology(): Topology = {
+    import org.apache.kafka.streams.scala.StreamsBuilder
+    val builder = new StreamsBuilder
+    KafkaStreamBurgerQuiz.topology(builder)
+    builder.build()
+  }
+
+  override def beforeEach(): Unit = {
+    KafkaStreamBurgerQuiz.config.put(StreamsConfig.STATE_DIR_CONFIG, tempDir.getAbsolutePath)
+    driver = new TopologyTestDriver(buildTopology(), KafkaStreamBurgerQuiz.config)
+
+    topicVegetable = driver.createInputTopic(KafkaStreamBurgerQuiz.topicVegetable, stringSerializer, stringSerializer)
+    topicBread = driver.createInputTopic(KafkaStreamBurgerQuiz.topicBread, stringSerializer, stringSerializer)
+    topicMeat = driver.createInputTopic(KafkaStreamBurgerQuiz.topicMeat, stringSerializer, stringSerializer)
+    topicBurger = driver.createOutputTopic(KafkaStreamBurgerQuiz.topicBurger, stringDeserializer, stringDeserializer)
+
+    topicSideDishes = driver.createInputTopic(KafkaStreamBurgerQuiz.topicSideDishes, stringSerializer, stringSerializer)
+    topicMeal = driver.createOutputTopic(KafkaStreamBurgerQuiz.topicMeal, stringDeserializer, stringDeserializer)
+  }
+
+  override def afterEach(): Unit = {
+    driver.close()
+  }
+
+  Feature("Burger") {
+    Scenario("Join with all items for a burger") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicVegetable.pipeInput(hungryMan, "🍅")
+      topicMeat.pipeInput(hungryMan, "🥩")
+
+      topicBurger.getQueueSize shouldBe 1
+      topicBurger.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
+    }
+    Scenario("Join with all items for a non burger") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicVegetable.pipeInput(hungryMan, "🥕")
+      topicMeat.pipeInput(hungryMan, "🥩")
+
+      topicBurger.getQueueSize shouldBe 1
+      topicBurger.readKeyValue() shouldBe new KeyValue(hungryMan, "🍞 + 🥕 + 🥩")
+    }
+    Scenario("Join with incomplete items") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicMeat.pipeInput(hungryMan, "🥩")
+
+      topicBurger.getQueueSize shouldBe 0
+    }
+  }
+
+  Feature("Meal") {
+    Scenario("Left join with all items") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicVegetable.pipeInput(hungryMan, "🍅")
+      topicMeat.pipeInput(hungryMan, "🥩")
+      topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
+
+      topicSideDishes.pipeInput(hungryMan, "🥔🍺")
+      topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🛍(🍔 + 🍟🍺)")
+    }
+
+    Scenario("Left join with incomplete items") {
+      val hungryMan = "🤤"
+
+      topicBread.pipeInput(hungryMan, "🍞")
+      topicVegetable.pipeInput(hungryMan, "🍅")
+      topicMeat.pipeInput(hungryMan, "🥩")
+      topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🍔")
+
+      topicSideDishes.pipeInput(hungryMan, "🍷")
+      topicMeal.readKeyValue() shouldBe new KeyValue(hungryMan, "🛍(🍔 + 🍷)")
+    }
+  }
+
+}

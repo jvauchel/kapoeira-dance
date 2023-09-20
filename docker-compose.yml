@@ -59,27 +59,27 @@ services:
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
       cub kafka-ready -b broker:29092 1 300 && \
       echo Creating topics... && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic vegetable --partitions 3 --replication-factor 1 && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic bread --partitions 3 --replication-factor 1 && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic meat --partitions 3 --replication-factor 1 && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic side-dishes --partitions 3 --replication-factor 1 && \
-      kafka-topics --bootstrap-server broker:29092 --create --topic burger --partitions 3 --replication-factor 1'"
-  burger-quiz:
-    build: burger-quiz
-    container_name: burger-quiz
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic potato --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic side-dishes --partitions 3 --replication-factor 1'"
+  fries-factory:
+    build: burger-quiz/fries-factory
+    container_name: fries-factory
     depends_on:
       create-topics:
         condition: service_completed_successfully
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
+      IMPLEMENTATION: good
+      # IMPLEMENTATION: bad
+      # IMPLEMENTATION: none
   kapoeira:
     image: lectratech/kapoeira
     container_name: kapoeira
     depends_on:
-      burger-quiz:
+      fries-factory:
         condition: service_started
     volumes:
-      - ./features:/features
+      - ./burger-quiz/fries-factory/it/features:/features
       - ./target/reports:/reports
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
