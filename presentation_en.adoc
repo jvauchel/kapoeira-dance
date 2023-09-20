@@ -33,18 +33,30 @@ Johanna Vauchel::
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra^] & speaker 🎤
 
+ifdef::conf-webinar[]
 === Presentation
-
 image::images/darmon.jpg[width=400]
 
 François Barbe::
 * icon:github[] https://github.com/fb33
 * icon:envelope[] f.barbe@lectra.com
 * Principal Architect at https://www.lectra.com[Lectra^]
+endif::[]
 
 == Opensource at Lectra
 image::images/opensource.gif[width=500]
 
+
+ifdef::conf-bdxio[]
+=== Lectra
+* Member of https://naos-cluster.com/
+* Partner in the https://hermine-foss.org/ project
+* Github : https://github.com/lectra-tech/
+* Dockerhub : https://hub.docker.com/u/lectratech
+endif::[]
+
+
+ifdef::conf-webinar[]
 === Lectra
 image::images/lectra-4.0.png[width=800]
 
@@ -58,6 +70,7 @@ image::images/lectra-4.0.png[width=800]
 * Contributor and creator of Opensource projects
 ** Partner in the https://hermine-foss.org/ project
 ** Kapoeira ...
+endif::[]
 
 == Take Away 🎁
 image::images/take-away.gif[width=500]
@@ -126,7 +139,6 @@ image::images/fast.jpg[width=500]
 Fast and efficient...
 
 === Scala Test Example
-
 
 [source, scala]
 ----
@@ -408,85 +420,60 @@ image::images/bluff.gif[width=500]
 
 image::images/banco.gif[width=500]
 
-=== How to build ? 🔨
-
-----
-docker build -t kapoeira:latest .
-----
 
 === How to use ? ⚒️
 
-https://hub.docker.com/r/lectratech/kapoeira[Docker Hub image]
+https://hub.docker.com/r/lectratech/kapoeira[^]
 
+[source, bash]
+----
+docker run --rm -ti 
+-v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
+-e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
+-e KAFKA_USER=<XXX> \
+-e KAFKA_PASSWORD=<****> \
+lectratech/kapoeira
+----
+
+=== More options
+
+[source, bash]
 ----
 docker run --rm -ti \
 -v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
 -e KAFKA_SCHEMA_REGISTRY_URL=<URL> \
+-e JAAS_AUTHENT=<true(default) | false> \
 -e KAFKA_USER=<XXX> \
 -e KAFKA_PASSWORD=<****> \
--e JAAS_AUTHENT=<true (default) | false> \
 -e LOGGING_LEVEL=<INFO (default) | ERROR | ...> \
 -e THREADS=<8 (default) | ... > \
 lectratech/kapoeira
 ----
 
-=== How to contribute ? 
-
+=== How to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[See here^] 
 image::images/contribute.gif[width=500]
-
-// === Story Telling
-// * C'est quoi
-// ** outil TI Kafka
-//
-// * Pourquoi
-// ** tests topo driver insuffisants, pas d'outil sur le marché, QA pas outillé
-// ** on recherche un outil pour communiquer en DEV/QA/PO
-
-// * Histoire
-// ** Inspiration Karate (et Gherkin)
-// ** Naissance en 2020 (1ere implem naive, basé sur console-script confluent)
-// ** Utilisation de ZIO dès 202x (pour améloration perf)
-
-// * Explication syntaxe
-// ** Simple d'utilisation et utilisable par tous
-//
-// * Utilisation
-//
-// * Démo
-//
-// * REX Kapo dans notre quotidien
-// ** Niveau d'adoption
-// ** Utilisation dès spec pour test d'acceptance
-// ** Facilité d'enrichissement de test apres les DEV
-// ** Définition de tests End2End
-//
-// * Contribution
-
-// === Tests d'intégration dans un environnement Kafka
-// image::https://raw.githubusercontent.com/lectra-tech/kapoeira/main/docs/diagrams/kapoeira.png[]
-//
-// === Les origines...
-// * Contexte Lectra
-// * Inner Source puis OpenSource
-
-
-// == Syntaxe
-// TODO
 
 == Thank you !
 
 image::images/cauchemar.gif[width=500]
 
+[.columns]
 == Thanks for your feedback
 
+[.column]
+icon:github[] https://jvauchel.github.io/ +
+icon:github[] https://mrebiai.github.io/ +
+ifdef::conf-webinar[]
+icon:github[] https://github.com/fb33/ +
+endif::[]
+ +
+icon:envelope[] vauchel.johanna@gmail.com +
+icon:envelope[] mehdi.rebiai.dev@gmail.com +
+ifdef::conf-webinar[]
+icon:envelope[] f.barbe@lectra.com +
+endif::[]
+
+[.column width="30%"]
 image::images/WebinarQRCode.png[width=200]
-
-icon:github[] https://jvauchel.github.io/
-
-icon:github[] https://mrebiai.github.io/
-
-icon:envelope[] vauchel.johanna@gmail.com
-
-icon:envelope[] mehdi.rebiai.dev@gmail.com

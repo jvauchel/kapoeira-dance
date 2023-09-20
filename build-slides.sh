@@ -16,6 +16,7 @@ do
     envsubst < custom.css > public/custom-${conf}.css
   docker run --name $(uuidgen) --rm -u $(id -u):$(id -g) -v $(pwd):/documents ${ASCIIDOCTOR_DOCKER_IMAGE} \
     asciidoctor-revealjs -a data-uri -a revealjs_theme=simple \
+    -a conf-${conf} \
     -a revealjsdir=${REVEALJS_DIR} -a revealjs_transition=fade \
     -a customcss=custom-${conf}.css -a revealjs_slideNumber=true \
     -D public -o index-${conf}.html \
