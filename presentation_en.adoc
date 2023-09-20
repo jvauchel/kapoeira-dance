@@ -97,7 +97,7 @@ image:images/vector.png[width=400]::
 * Thousands of cutters
 * Millions events every day
 
-[.column]
+[.column width="30%"]
 image::images/combien.gif[width=300]
 
 
@@ -463,7 +463,7 @@ image::images/contribute.gif[width=500]
 image::images/cauchemar.gif[width=500]
 
 [.columns]
-== Thanks for your feedback
+=== Thanks for your feedback
 
 [.column]
 icon:github[] https://jvauchel.github.io/ +
@@ -479,4 +479,9 @@ icon:envelope[] f.barbe@lectra.com +
 endif::[]
 
 [.column width="30%"]
+ifdef::conf-webinar[]
 image::images/WebinarQRCode.png[width=200]
+endif::[]
+ifdef::conf-bdxio[]
+TODO QR Code OpenFeedback
+endif::[]
