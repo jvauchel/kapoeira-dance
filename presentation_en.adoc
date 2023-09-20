@@ -42,7 +42,7 @@ François Barbe::
 == Opensource at Lectra
 
 === Lectra
-image:images/lectra-4.0.png[width=800]
+image::images/lectra-4.0.png[width=800]
 
 === Opensource
 
@@ -70,7 +70,7 @@ image::images/cine.gif[width=800]
 === Vector
 
 //[.column]
-image:images/vector.png[width=300]
+image::images/vector.png[width=300]
 
 * Thousands of cutters
 * Millions of events every day
@@ -80,25 +80,25 @@ image:images/vector.png[width=300]
 
 === Enrich and collect data
 
-image:images/enrichData.png[width=800]
+image::images/enrichData.png[width=800]
 
 === Data pipeline
 
-image:images/data-pipeline.png[width=800]
+image::images/data-pipeline.png[width=800]
 
 === We are perfect !
 
-image:images/perfect.jpg[width=800]
+image::images/perfect.jpg[width=800]
 
 === Data is perfect !
 
-image:images/pipeline-example.png[width=800]
+image::images/pipeline-example.png[width=800]
 
 === NO !
 image::images/no-not.gif[width=600]
 
 === NO !
-image:images/pipeline-example-poo.png[width=800]
+image::images/pipeline-example-poo.png[width=800]
 
 === Solution ?
 
@@ -108,7 +108,7 @@ TESTS OUR STREAMS!
 
 https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html[TopologyTestDriver^]
 
-image:images/fast.jpg[width=500]
+image::images/fast.jpg[width=500]
 
 Fast and efficient...
 
@@ -126,30 +126,30 @@ image::images/content-vomi.gif[width=400]
 
 === ... But it's a mocked infrastructure
 
-image:images/fail.jpeg[width=600]
+image::images/fail.jpeg[width=600]
 
 It did not test the *integration* with the Kafka cluster
 
 === ... And only unit tests
 
-image:images/end-to-end.png[width=600]
+image::images/end-to-end.png[width=600]
 
 How to test *several* streams ?
 
 === ... And it's not for QA (=👮)
 
-image:images/les-nuls-police.gif[width=500]
+image::images/les-nuls-police.gif[width=500]
 
 === ... And it's technical code
 
-image:images/simon-kara.gif[width=600]
+image::images/simon-kara.gif[width=600]
 
 How to *communicate* with DEV/PO/QA ?
 
 == What do we need ?
 
-image:images/test-pyramid.png[width=350]
-image:images/cesar-triangle.gif[width=400]
+image::images/test-pyramid.png[width=350]
+image::images/cesar-triangle.gif[width=400]
 
 *Integration* tests with a *simple* syntax
 
@@ -157,7 +157,7 @@ image:images/cesar-triangle.gif[width=400]
 === Inspiration : Karate
 
 [.column]
-image:images/karate.png[width=200]
+image::images/karate.png[width=200]
 
 [.column]
 * HTTP-based APIs
@@ -227,7 +227,7 @@ image::images/scala.jpg[width=300]
 
 === 2021 - ZIO
 
-image:images/zio.jpeg[width=300]
+image::images/zio.jpeg[width=300]
 
 * To improve perfs
 * Add parallel mode
@@ -235,13 +235,13 @@ image:images/zio.jpeg[width=300]
 
 === 2023 - Open Source
 
-image:images/kapoeira_logo_text.png[width=200]
+image::images/kapoeira_logo_text.png[width=200]
 
 icon:github[] https://github.com/lectra-tech/kapoeira
 
 === 2024 - New features
 
-image:images/simon.jpeg[width=200]
+image::images/simon.jpeg[width=200]
 
 Thanks to you !
 
@@ -264,7 +264,7 @@ As a 🧑‍🍳, WHEN I send a 🥔 to my robot, THEN I expect to have 🍟
 // ----
 
 === fries-factory 
-//image:images/patate.gif[width=300,float=right]
+//image::images/patate.gif[width=300,float=right]
 image::diagrams/fries-factory.svg[width=800]
 
 === User Story n°2
@@ -282,7 +282,7 @@ As a 🧑‍🍳, WHEN I send the ingredients (🍞,🍅,🥩) in dedicated robo
 === burger-factory
 image::diagrams/burger-factory.svg[width=800]
 
-=== meal-factory image:images/chewing-gum.gif[width=300,float=right]
+=== meal-factory image::images/chewing-gum.gif[width=300,float=right]
 image::diagrams/meal-factory.svg[width=800]
 
 
@@ -367,7 +367,7 @@ image::diagrams/burger-quiz.svg[width=800]
 === Advantages 💪
 
 [.column]
-image:images/advantages.gif[width=500]
+image::images/advantages.gif[width=500]
 
 [.column]
 [%step]
@@ -454,7 +454,7 @@ image::images/kapoeira.gif[]
 
 == Thanks for your feedback
 
-image:images/WebinarQRCode.png[width=200]
+image::images/WebinarQRCode.png[width=200]
 
 icon:github[] https://jvauchel.github.io/
 
