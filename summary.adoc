@@ -1,6 +1,11 @@
 = 🕺 Youpi dansons la Kapoeira ! 💃
+:icons: font
 
-Presentation of Kafka integration test tool
+Presentation of a Kafka integration test tool
+
+* icon:github[] https://github.com/jvauchel/kapoeira-dance : presentation sources
+* icon:github[] https://github.com/lectra-tech/kapoeira : Kapoeira
+
 
 == Slides
 
