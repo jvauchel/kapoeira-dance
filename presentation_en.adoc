@@ -426,6 +426,7 @@ lectratech/kapoeira
 ----
 docker run --rm -ti \
 -v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
+-v <PATH_TO_YOUR_REPORTS>:/reports \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
 -e KAFKA_SCHEMA_REGISTRY_URL=<URL> \
