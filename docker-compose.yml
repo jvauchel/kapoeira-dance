@@ -1,6 +1,7 @@
 ---
 version: '2'
 services:
+  # kafka
   zookeeper:
     image: confluentinc/cp-zookeeper:7.2.0
     hostname: zookeeper
@@ -61,6 +62,7 @@ services:
       echo Creating topics... && \
       kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic potato --partitions 3 --replication-factor 1 && \ 
       kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic side-dishes --partitions 3 --replication-factor 1'"
+  # factories
   fries-factory:
     build: burger-quiz/fries-factory
     container_name: fries-factory
@@ -70,6 +72,15 @@ services:
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
       IMPLEMENTATION: ${FRIES_IMPL}
+  burger-factory:
+    build: burger-quiz/burger-factory
+    container_name: burger-factory
+    depends_on:
+      create-topics:
+        condition: service_completed_successfully
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+  # kapoeira
   kapoeira-fries:
     image: lectratech/kapoeira
     container_name: kapoeira-fries
@@ -86,7 +97,7 @@ services:
     image: lectratech/kapoeira
     container_name: kapoeira-burger
     depends_on:
-      fries-factory:
+      burger-factory:
         condition: service_started
     volumes:
       - ./burger-quiz/burger-factory/it/features:/features
