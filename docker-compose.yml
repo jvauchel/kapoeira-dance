@@ -69,19 +69,52 @@ services:
         condition: service_completed_successfully
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
-      IMPLEMENTATION: good
-      # IMPLEMENTATION: bad
-      # IMPLEMENTATION: none
-  kapoeira:
+      IMPLEMENTATION: ${FRIES_IMPL}
+  kapoeira-fries:
     image: lectratech/kapoeira
-    container_name: kapoeira
+    container_name: kapoeira-fries
     depends_on:
       fries-factory:
         condition: service_started
     volumes:
-      - ./burger-quiz/fries-factory/it/features:/features/fries-factory
-      #- ./burger-quiz/burger-factory/it/features:/features/burger-factory
-      - ./target/reports:/reports
+      - ./burger-quiz/fries-factory/it/features:/features
+      - ./target/reports/fries-factory:/reports
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+      JAAS_AUTHENT: false
+  kapoeira-burger:
+    image: lectratech/kapoeira
+    container_name: kapoeira-burger
+    depends_on:
+      fries-factory:
+        condition: service_started
+    volumes:
+      - ./burger-quiz/burger-factory/it/features:/features
+      - ./target/reports/burger-factory:/reports
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+      JAAS_AUTHENT: false
+  kapoeira-meal:
+    image: lectratech/kapoeira
+    container_name: kapoeira-meal
+    depends_on:
+      fries-factory:
+        condition: service_started
+    volumes:
+      - ./burger-quiz/meal-factory/it/features:/features
+      - ./target/reports/meal-factory:/reports
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+      JAAS_AUTHENT: false
+  kapoeira-end-to-end:
+    image: lectratech/kapoeira
+    container_name: kapoeira-end-to-end
+    depends_on:
+      fries-factory:
+        condition: service_started
+    volumes:
+      - ./burger-quiz/end-to-end/it/features:/features
+      - ./target/reports/end-to-end:/reports
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
       JAAS_AUTHENT: false

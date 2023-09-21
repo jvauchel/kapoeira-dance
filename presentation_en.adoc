@@ -312,8 +312,8 @@ TODO
 
 * As a 🧑‍🍳
 * GIVEN my fries-factory
-* WHEN I send 🥔 to it, with [.red]#KETCHUP(🍅)# Kafka Header
-* THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)#
+* WHEN I send 🥔 to it, with [.red]#KETCHUP(🍅)# as Kafka Header
+* THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)# as Kafka Header
 
 === User Story n°3 - Solution
 * {burger-quiz-url}/fries-factory/it/features/fries-us3.feature[A feature...^]

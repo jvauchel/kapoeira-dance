@@ -26,16 +26,16 @@ Kapoeira features link:features[here^]
 docker compose build --no-cache
 ----
 
-.Run an Kafka infrastructure & Kapoeira features
+.Run an Kafka infrastructure & All Kapoeira features
 [source, bash]
 ----
 docker compose up -d
 ----
 
-NOTE: Check `target/reports/kapoeira-report.html`
+NOTE: Check `target/reports/xxx/kapoeira-report.html`
 
-.Re-run Kapoeira features
+.Re-run only Kapoeira features on fries-factory
 [source, bash]
 ----
-docker restart kapoeira
+docker compose restart kapoeira-fries
 ----

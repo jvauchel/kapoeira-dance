@@ -24,7 +24,6 @@ Feature: End To End
             | topic_alias | key        | value  |
             | meal-out    | 🧑‍🍳_${uuid} | result |
 
-
         And assert result $ == "<output>"
 
         Examples:

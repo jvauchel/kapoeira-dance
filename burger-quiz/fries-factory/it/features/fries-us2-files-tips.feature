@@ -21,7 +21,6 @@ Feature: Fries 🍟 feature
       | potato-out      | 🧑‍🍳_${uuid} | input3  |
       | potato-out      | 🧑‍🍳_${uuid} | input4  |
       | side-dishes-out | 🧑‍🍳_${uuid} | result1 |
-      | side-dishes-out | 🧑‍🍳_${uuid} | result1 |
       | side-dishes-out | 🧑‍🍳_${uuid} | result2 |
       | side-dishes-out | 🧑‍🍳_${uuid} | result3 |
       | side-dishes-out | 🧑‍🍳_${uuid} | result4 |

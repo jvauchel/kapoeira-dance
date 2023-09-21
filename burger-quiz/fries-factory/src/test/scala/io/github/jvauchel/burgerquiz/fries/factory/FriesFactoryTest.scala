@@ -47,25 +47,21 @@ class FriesFactoryTest extends AnyFeatureSpec with Matchers with BeforeAndAfterE
   Feature("Good implementation") {
     Scenario("Nominal") {
       Given("🥔")
-      val hungryMan = "🤤"
-
       When("🧑‍🍳")
-      topicPotato.pipeInput(hungryMan, "🥔")
+      topicPotato.pipeInput("🧑‍🍳", "🥔")
 
       Then("🍟")
       topicSideDishes.getQueueSize shouldBe 1
-      topicSideDishes.readKeyValue() shouldBe new KeyValue(hungryMan, "🍟")
+      topicSideDishes.readKeyValue() shouldBe new KeyValue("🧑‍🍳", "🍟")
     }
     Scenario("Error") {
       Given("🍞")
-      val hungryMan = "🤤"
-
       When("🧑‍🍳")
-      topicPotato.pipeInput(hungryMan, "🍞")
+      topicPotato.pipeInput("🧑‍🍳", "🍞")
 
       Then("🍞")
       topicSideDishes.getQueueSize shouldBe 1
-      topicSideDishes.readKeyValue() shouldBe new KeyValue(hungryMan, "🍞")
+      topicSideDishes.readKeyValue() shouldBe new KeyValue("🧑‍🍳", "🍞")
     }
   }
 }
