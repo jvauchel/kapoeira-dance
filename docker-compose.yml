@@ -79,7 +79,8 @@ services:
       fries-factory:
         condition: service_started
     volumes:
-      - ./burger-quiz/fries-factory/it/features:/features
+      - ./burger-quiz/fries-factory/it/features:/features/fries-factory
+      #- ./burger-quiz/burger-factory/it/features:/features/burger-factory
       - ./target/reports:/reports
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092

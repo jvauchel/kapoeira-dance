@@ -290,16 +290,23 @@ image::diagrams/fries-factory.svg[width=800]
 * {burger-quiz-url}/fries-factory/it/features/fries-us1-uuid.feature[With uuid^]
 * {burger-quiz-url}/fries-factory/it/features/fries-us1-outline.feature[With Scenario Outline^]
 
+=== User Story n°1 - Report
+TODO
+
 === User Story n°2
 
 * As a 🧑‍🍳
 * GIVEN my fries-factory
-* WHEN I send 🥔🥔🥔 to it
-* THEN I expect to have 🍟🍟🍟
+* WHEN I send 🥔🥔🥔🥔 to it
+* THEN I expect to have 🍟🍟🍟🍟
 
 === User Story n°2 - Solution
 * {burger-quiz-url}/fries-factory/it/features/fries-us2-files.feature[A feature...^]
 * {burger-quiz-url}/fries-factory/it/features/records/potatoes.dat[... calling this file^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us2-files-tips.feature[A feature with a tip^]
+
+=== User Story n°2 - Report
+TODO
 
 === User Story n°3
 
@@ -309,7 +316,11 @@ image::diagrams/fries-factory.svg[width=800]
 * THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)#
 
 === User Story n°3 - Solution
-{burger-quiz-url}/fries-factory/it/features/fries-us3.feature[Here^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us3.feature[A feature...^]
+* {burger-quiz-url}/fries-factory/it/features/records/potatoesWithHeaders.dat[... calling this file^]
+
+=== User Story n°3 - Report
+TODO
 
 === User Story n°4
 
@@ -321,77 +332,41 @@ image::diagrams/fries-factory.svg[width=800]
 === burger-factory image:images/sel-poivre.gif[width=200,float=right]
 image::diagrams/burger-factory.svg[width=800]
 
+=== User Story n°4 - Solution
+{burger-quiz-url}/burger-factory/it/features/burger-us4.feature[Here^]
+
+=== User Story n°4 - Report
+TODO
+
+=== User Story n°5
+
+* As a 
+* GIVEN my meal-factory
+* WHEN I send the a 🍔 and some side dishes 🍟 to it
+* THEN I expect to have a great meal (🍔 + 🍟)
+
+=== User Story n°5 - Solution
+{burger-quiz-url}/meal-factory/it/features/meal-us5.feature[Here^]
+
+=== User Story n°5 - Report
+TODO
+
 === meal-factory image:images/chewing-gum.gif[width=300,float=right]
 image::diagrams/meal-factory.svg[width=800]
 
-=== burger-quiz image:images/burger-quiz.gif[width=200,float=right]
-// TODO tests end2end
+=== User Story n°5 - Solution
+{burger-quiz-url}/meal-factory/it/features/meal-us5.feature[Here^]
+
+=== User Story n°5 - Report
+TODO
+
+=== End To End Tests image:images/burger-quiz.gif[width=200,float=right]
 
 image::diagrams/burger-quiz.svg[width=800]
 
-// Note
 
-// Frite simple patate => une frite (v1 sans uuid)
-// Fichier : plusieurs patates dans un fichier => une frite par patate
-
-// Header : Mayo/ Ketchup en header => et en sortie header Mayo et Header
-
-// internal function: on ajoute le uuid
-
-// Tests end-to-end et batching : fries + burger factory
-
-// lot de records : burger mais à simplifier (side dishes à enlever
-
-// call script ?$
-
-// assertion : output = value/price ???
-
-// feature à évoquer sans demo : avro/json schema, external script
-
-// demo avec QA/PO/DEV, publique, on part d'une story, on écrit le test, il marche pas (report KO), on débloque le code qui fonctionne, le report est vert
-
-// === Fries.feature
-// [source, gherkin]
-// ----
-// include::features/fries-us1.feature[]
-// ----
-//
-// === An architecture
-// image::diagrams/burger-quiz.svg[width=800]
-//
-// === Docker commands
-// ----
-// docker compose build --no-cache
-// docker compose up -d
-// docker restart kapoeira
-// ----
-//
-// === burger.feature
-// [source, gherkin]
-// ----
-// include::features/burger.feature[]
-// ----
-//
-// === meal.feature
-// [source, gherkin]
-// ----
-// include::features/meal.feature[]
-// ----
-//
-//
-//
-// == Advanced example
-//
-// [source, gherkin]
-// ----
-// include::features/example.feature[]
-// ----
-//
-// // explication feature, scenario, background, .....
-//
 === Report
 image:images/rapport.gif[width=400] image:images/report.png[width=450]
-
 
 == 🥦 REX 🥃
 
