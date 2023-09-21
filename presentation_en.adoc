@@ -340,16 +340,10 @@ TODO
 
 === User Story n°5
 
-* As a 
+* As a 🧑‍🍳
 * GIVEN my meal-factory
-* WHEN I send the a 🍔 and some side dishes 🍟 to it
+* WHEN I send a 🍔 and some side dishes 🍟 to it
 * THEN I expect to have a great meal (🍔 + 🍟)
-
-=== User Story n°5 - Solution
-{burger-quiz-url}/meal-factory/it/features/meal-us5.feature[Here^]
-
-=== User Story n°5 - Report
-TODO
 
 === meal-factory image:images/chewing-gum.gif[width=300,float=right]
 image::diagrams/meal-factory.svg[width=800]
@@ -360,10 +354,21 @@ image::diagrams/meal-factory.svg[width=800]
 === User Story n°5 - Report
 TODO
 
-=== End To End Tests image:images/burger-quiz.gif[width=200,float=right]
+=== User Story n°6 (End To End)
 
+* As a 🧑‍🍳
+* GIVEN my burger-quiz
+* WHEN I send the ingredients (🍞,🍅,🥩) and a 🥔 to it
+* THEN I expect to have a great meal (🍔 + 🍟)
+
+=== User Story n°6 (End To End) image:images/burger-quiz.gif[width=200,float=right]
 image::diagrams/burger-quiz.svg[width=800]
 
+=== User Story n°6 (End To End) - Solution
+{burger-quiz-url}/end-to-end/it/features/end-to-end-us6.feature[Here^]
+
+=== User Story n°6 (End To End) - Report
+TODO
 
 === Report
 image:images/rapport.gif[width=400] image:images/report.png[width=450]
@@ -440,7 +445,9 @@ image::images/cauchemar.gif[width=500]
 [.columns]
 === Thanks for your feedback
 
-[.column]
+[.column width="70%"]
+icon:github[] https://github.com/lectra-tech/kapoeira +
+ +
 icon:github[] https://jvauchel.github.io/ +
 icon:github[] https://mrebiai.github.io/ +
 ifdef::conf-webinar[]
