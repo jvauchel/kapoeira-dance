@@ -6,13 +6,6 @@
 
 image::images/kapoeira.gif[]
 
-// Tests d'intégration dans un environnement Kafka
-
-// == Sommaire
-// * Kapoeira
-// * Syntaxe
-// * Démo
-
 == Presentation
 image::images/hello.gif[width=500]
 
