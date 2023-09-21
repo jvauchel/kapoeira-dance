@@ -20,7 +20,7 @@ image::images/hello.gif[width=500]
 image::images/kara.jpeg[width=300]
 
 Mehdi Rebiai::
-* icon:github[] https://mrebiai.github.io/
+* icon:github[] https://mrebiai.github.io/[^]
 * icon:envelope[] mehdi.rebiai.dev@gmail.com
 * Techlead & Data engineer at https://www.lectra.com[Lectra^]
 
@@ -29,7 +29,7 @@ Mehdi Rebiai::
 image::images/odile.jpeg[width=400]
 
 Johanna Vauchel::
-* icon:github[] https://jvauchel.github.io/
+* icon:github[] https://jvauchel.github.io/[^]
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra^] & speaker 🎤
 
@@ -38,7 +38,7 @@ ifdef::conf-webinar[]
 image::images/darmon.jpg[width=400]
 
 François Barbe::
-* icon:github[] https://github.com/fb33
+* icon:github[] https://github.com/fb33[^]
 * icon:envelope[] f.barbe@lectra.com
 * Principal Architect at https://www.lectra.com[Lectra^]
 endif::[]
@@ -198,6 +198,13 @@ image::images/kafkalogo.jpg[width=300]
 Integration with *Kafka Streams* !
 
 == What is Kapoeira?
+.A Kapoeira Test
+[source, gherkin]
+----
+include::features/example.feature[]
+----
+
+=== What is Kapoeira?
 
 Cucumber Scala using specific Gherkin DSL
 
@@ -286,12 +293,17 @@ image::images/burger-quiz.gif[width=500]
 image::diagrams/fries-factory.svg[width=800]
 
 === User Story n°1 - Solution
-* {burger-quiz-url}/fries-factory/it/features/fries-us1.feature[1st version^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us1-uuid.feature[With uuid^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us1-outline.feature[With Scenario Outline^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us1.0.feature[1st version^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us1.1-uuid.feature[With uuid^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us1.2-outline.feature[With Scenario Outline^]
 
+[.columns]
 === User Story n°1 - Report
-TODO
+[.column]
+image::images/report-us1.2.png[width=450]
+
+[.column]
+image:images/rapport.gif[width=400] 
 
 === User Story n°2
 
@@ -301,12 +313,12 @@ TODO
 * THEN I expect to have 🍟🍟🍟🍟
 
 === User Story n°2 - Solution
-* {burger-quiz-url}/fries-factory/it/features/fries-us2-files.feature[A feature...^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us2.0-files.feature[A feature...^]
 * {burger-quiz-url}/fries-factory/it/features/records/potatoes.dat[... calling this file^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us2-files-tips.feature[A feature with a tip^]
+* {burger-quiz-url}/fries-factory/it/features/fries-us2.1-files-tips.feature[A feature with a tip^]
 
 === User Story n°2 - Report
-TODO
+image::images/report-us2.0.png[width=450]
 
 === User Story n°3
 
@@ -320,7 +332,7 @@ TODO
 * {burger-quiz-url}/fries-factory/it/features/records/potatoesWithHeaders.dat[... calling this file^]
 
 === User Story n°3 - Report
-TODO
+image::images/report-us3.png[width=450]
 
 === User Story n°4
 
@@ -336,7 +348,7 @@ image::diagrams/burger-factory.svg[width=800]
 {burger-quiz-url}/burger-factory/it/features/burger-us4.feature[Here^]
 
 === User Story n°4 - Report
-TODO
+image::images/report-us4.png[width=375]
 
 === User Story n°5
 
@@ -352,26 +364,23 @@ image::diagrams/meal-factory.svg[width=800]
 {burger-quiz-url}/meal-factory/it/features/meal-us5.feature[Here^]
 
 === User Story n°5 - Report
-TODO
+image::images/report-us5.png[width=400]
 
-=== User Story n°6 (End To End)
+=== User Story n°6
 
 * As a 🧑‍🍳
 * GIVEN my burger-quiz
 * WHEN I send the ingredients (🍞,🍅,🥩) and a 🥔 to it
 * THEN I expect to have a great meal (🍔 + 🍟)
 
-=== User Story n°6 (End To End) image:images/burger-quiz.gif[width=200,float=right]
+=== User Story n°6 image:images/burger-quiz.gif[width=200,float=right]
 image::diagrams/burger-quiz.svg[width=800]
 
-=== User Story n°6 (End To End) - Solution
+=== User Story n°6 - Solution
 {burger-quiz-url}/end-to-end/it/features/end-to-end-us6.feature[Here^]
 
-=== User Story n°6 (End To End) - Report
-TODO
-
-=== Report
-image:images/rapport.gif[width=400] image:images/report.png[width=450]
+=== User Story n°6 - Report
+image::images/report-us6.png[width=325]
 
 == 🥦 REX 🥃
 
@@ -446,12 +455,12 @@ image::images/cauchemar.gif[width=500]
 === Thanks for your feedback
 
 [.column width="70%"]
-icon:github[] https://github.com/lectra-tech/kapoeira +
+icon:github[] https://github.com/lectra-tech/kapoeira[^] +
  +
-icon:github[] https://jvauchel.github.io/ +
-icon:github[] https://mrebiai.github.io/ +
+icon:github[] https://jvauchel.github.io/[^] +
+icon:github[] https://mrebiai.github.io/[^] +
 ifdef::conf-webinar[]
-icon:github[] https://github.com/fb33/ +
+icon:github[] https://github.com/fb33/[^] +
 endif::[]
  +
 icon:envelope[] vauchel.johanna@gmail.com +

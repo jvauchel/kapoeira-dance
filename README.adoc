@@ -24,6 +24,12 @@ NOTE: pre-requisites : Docker & Linux
 docker compose up -d
 ----
 
+.Stop all
+[source, bash]
+----
+docker compose down
+----
+
 .Force build burger-quiz (with no cache)
 [source, bash]
 ----

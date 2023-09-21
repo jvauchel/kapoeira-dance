@@ -1,4 +1,4 @@
-Feature: Burger 🍔 feature
+Feature: Meal feature
 
   Background:
     Given input topic

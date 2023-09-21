@@ -1,4 +1,4 @@
-Feature: End To End
+Feature: End To End Feature
 
     Background:
         Given input topic

@@ -17,7 +17,7 @@ Feature: Burger 🍔 feature
       | bread-in     | 🧑‍🍳_${uuid} | <bread>     |
       | vegetable-in | 🧑‍🍳_${uuid} | <vegetable> |
       | meat-in      | 🧑‍🍳_${uuid} | <meat>      |
-
+      
     Then expected records
       | topic_alias | key        | value  |
       | burger-out  | 🧑‍🍳_${uuid} | result |
