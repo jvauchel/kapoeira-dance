@@ -18,21 +18,19 @@ https://jvauchel.github.io/kapoeira-dance/[^]
 
 NOTE: pre-requisites : Docker & Linux
 
-Kapoeira features link:features[here^]
-
-.Build burger-quiz (with no cache)
-[source, bash]
-----
-docker compose build --no-cache
-----
-
 .Run an Kafka infrastructure & All Kapoeira features
 [source, bash]
 ----
 docker compose up -d
 ----
 
-NOTE: Check `target/reports/xxx/kapoeira-report.html`
+.Force build burger-quiz (with no cache)
+[source, bash]
+----
+docker compose build --no-cache
+----
+
+NOTE: Check `target/reports/xxx/kapoeira-report.html` for Kapoeira reports
 
 .Re-run only Kapoeira features on fries-factory
 [source, bash]
