@@ -1,5 +1,18 @@
 = preparation talk
 
+== à préparer en amont pour la demo:
+
+* Docker compose down
+* docker compose up -d avec le Impl à None
+* anticiper l'affichage des reports dans le browser
+
+== Déroulement de la demo
+
+voir demo.sh
+
+== ex de pitch
+
+
 Bonjour à toutes et à tous, merci d'être venu assister à cette présentation de l'outil open source Kapoeira.
 
 Vous pouvez retrouver les slides de cette présentation en scannant ce petit QR code.
