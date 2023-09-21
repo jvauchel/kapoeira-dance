@@ -61,7 +61,12 @@ services:
       cub kafka-ready -b broker:29092 1 300 && \
       echo Creating topics... && \
       kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic potato --partitions 3 --replication-factor 1 && \ 
-      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic side-dishes --partitions 3 --replication-factor 1'"
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic side-dishes --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic bread --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic vegetable --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic meat --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic burger --partitions 3 --replication-factor 1 && \ 
+      kafka-topics --bootstrap-server broker:29092 --if-not-exists --create --topic meal --partitions 3 --replication-factor 1'"
   # factories
   fries-factory:
     build: burger-quiz/fries-factory
@@ -75,6 +80,14 @@ services:
   burger-factory:
     build: burger-quiz/burger-factory
     container_name: burger-factory
+    depends_on:
+      create-topics:
+        condition: service_completed_successfully
+    environment:
+      KAFKA_BOOTSTRAP_SERVER: broker:29092
+  meal-factory:
+    build: burger-quiz/meal-factory
+    container_name: meal-factory
     depends_on:
       create-topics:
         condition: service_completed_successfully
@@ -109,7 +122,7 @@ services:
     image: lectratech/kapoeira
     container_name: kapoeira-meal
     depends_on:
-      fries-factory:
+      meal-factory:
         condition: service_started
     volumes:
       - ./burger-quiz/meal-factory/it/features:/features
@@ -122,6 +135,10 @@ services:
     container_name: kapoeira-end-to-end
     depends_on:
       fries-factory:
+        condition: service_started
+      burger-factory:
+        condition: service_started
+      meal-factory:
         condition: service_started
     volumes:
       - ./burger-quiz/end-to-end/it/features:/features
