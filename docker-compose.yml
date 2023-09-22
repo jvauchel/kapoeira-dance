@@ -118,18 +118,6 @@ services:
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
       JAAS_AUTHENT: false
-  kapoeira-meal:
-    image: lectratech/kapoeira
-    container_name: kapoeira-meal
-    depends_on:
-      meal-factory:
-        condition: service_started
-    volumes:
-      - ./burger-quiz/meal-factory/it/features:/features
-      - ./target/reports/meal-factory:/reports
-    environment:
-      KAFKA_BOOTSTRAP_SERVER: broker:29092
-      JAAS_AUTHENT: false
   kapoeira-end-to-end:
     image: lectratech/kapoeira
     container_name: kapoeira-end-to-end

@@ -249,6 +249,20 @@ image::images/kapoeira_logo_text.png[width=200]
 
 icon:github[] https://github.com/lectra-tech/kapoeira
 
+🐳 https://hub.docker.com/r/lectratech/kapoeira[^]
+
+=== How to run 
+
+[source, bash]
+----
+docker run --rm -ti 
+-v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
+-e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
+-e KAFKA_USER=<XXX> \
+-e KAFKA_PASSWORD=<****> \
+lectratech/kapoeira
+----
+
 === 2024 - New features
 
 image::images/simon.jpeg[width=200]
@@ -258,6 +272,16 @@ Thanks to you !
 == Demo
 image::images/burger-quiz.gif[width=500]
 
+=== Demo pipeline image:images/burger-quiz.gif[width=200,float=right]
+image::diagrams/burger-quiz.svg[width=800]
+
+=== Demo docker-compose image:images/docker-compose.png[width=100]
+
+https://github.com/jvauchel/kapoeira-dance/blob/main/docker-compose.yml[here^]
+
+=== Focus on fries image:images/patate.gif[width=300,float=right]
+image::diagrams/fries-factory.svg[width=800]
+
 === User Story n°1
 
 * As a 🧑‍🍳
@@ -265,13 +289,7 @@ image::images/burger-quiz.gif[width=500]
 * WHEN I send a 🥔 to it
 * THEN I expect to have 🍟
 
-=== fries-factory image:images/patate.gif[width=300,float=right]
-image::diagrams/fries-factory.svg[width=800]
-
-=== User Story n°1 - Solution
-* {burger-quiz-url}/fries-factory/it/features/fries-us1.0.feature[1st version^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us1.1-uuid.feature[With uuid^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us1.2-outline.feature[With Scenario Outline^]
+{burger-quiz-url}/fries-factory/it/features/fries-us1.feature[Solution^]
 
 [.columns]
 === User Story n°1 - Report
@@ -281,82 +299,49 @@ image::images/report-us1.2.png[width=450]
 [.column]
 image:images/rapport.gif[width=400] 
 
+=== Focus on burger image:images/sel-poivre.gif[width=200,float=right]
+image::diagrams/burger-factory.svg[width=800]
+
 === User Story n°2
-
-* As a 🧑‍🍳
-* GIVEN my fries-factory
-* WHEN I send 🥔🥔🥔🥔 to it
-* THEN I expect to have 🍟🍟🍟🍟
-
-=== User Story n°2 - Solution
-* {burger-quiz-url}/fries-factory/it/features/fries-us2.0-files.feature[A feature...^]
-* {burger-quiz-url}/fries-factory/it/features/records/potatoes.dat[... calling this file^]
-* {burger-quiz-url}/fries-factory/it/features/fries-us2.1-files-tips.feature[A feature with a tip^]
-
-=== User Story n°2 - Report
-image::images/report-us2.0.png[width=450]
-
-=== User Story n°3
-
-* As a 🧑‍🍳
-* GIVEN my fries-factory
-* WHEN I send 🥔 to it, with [.red]#KETCHUP(🍅)# as Kafka Header
-* THEN I expect to have a 🍟 with [.red]#KETCHUP(🍅)# as Kafka Header
-
-=== User Story n°3 - Solution
-* {burger-quiz-url}/fries-factory/it/features/fries-us3.feature[A feature...^]
-* {burger-quiz-url}/fries-factory/it/features/records/potatoesWithHeaders.dat[... calling this file^]
-
-=== User Story n°3 - Report
-image::images/report-us3.png[width=450]
-
-=== User Story n°4
 
 * As a 🧑‍🍳
 * GIVEN my burger-factory
 * WHEN I send the ingredients (🍞,🍅,🥩) to it
 * THEN I expect to have a delicious 🍔
 
-=== burger-factory image:images/sel-poivre.gif[width=200,float=right]
-image::diagrams/burger-factory.svg[width=800]
+{burger-quiz-url}/burger-factory/it/features/burger-us2.feature[Solution^]
 
-=== User Story n°4 - Solution
-{burger-quiz-url}/burger-factory/it/features/burger-us4.feature[Here^]
-
-=== User Story n°4 - Report
+=== User Story n°2 - Report
 image::images/report-us4.png[width=375]
 
-=== User Story n°5
+=== Focus on end-to-end test image:images/burger-quiz.gif[width=200,float=right]
+image::diagrams/burger-quiz.svg[width=800]
+
+=== User Story n°3
 
 * As a 🧑‍🍳
-* GIVEN my meal-factory
-* WHEN I send a 🍔 and some side dishes 🍟 to it
-* THEN I expect to have a great meal (🍔 + 🍟)
-
-=== meal-factory image:images/chewing-gum.gif[width=300,float=right]
-image::diagrams/meal-factory.svg[width=800]
-
-=== User Story n°5 - Solution
-{burger-quiz-url}/meal-factory/it/features/meal-us5.feature[Here^]
-
-=== User Story n°5 - Report
-image::images/report-us5.png[width=400]
-
-=== User Story n°6
-
-* As a 🧑‍🍳
-* GIVEN my burger-quiz
+* GIVEN my burger-quiz pipeline
 * WHEN I send the ingredients (🍞,🍅,🥩) and a 🥔 to it
 * THEN I expect to have a great meal (🍔 + 🍟)
 
-=== User Story n°6 image:images/burger-quiz.gif[width=200,float=right]
-image::diagrams/burger-quiz.svg[width=800]
+{burger-quiz-url}/end-to-end/it/features/end-to-end-us3.feature[Solution^]
 
-=== User Story n°6 - Solution
-{burger-quiz-url}/end-to-end/it/features/end-to-end-us6.feature[Here^]
-
-=== User Story n°6 - Report
+=== User Story n°3 - Report
 image::images/report-us6.png[width=325]
+
+[.columns]
+=== Autres features
+
+[.column width="70%"]
+image::images/veracruz.gif[width=600]
+
+[.column width="30%"]
+* https://github.com/lectra-tech/kapoeira#75-assertions[Assertion json path]
+* https://github.com/lectra-tech/kapoeira#751-headers[Header kafka]
+* https://github.com/lectra-tech/kapoeira#77-call-scripts[Call external scripts]
+* https://github.com/lectra-tech/kapoeira#73-avro-and-json-schema[Avro, json format message]
+* https://github.com/lectra-tech/kapoeira#78-produce--consume-with-batches[Batch of records]
+
 
 == 🥦 REX 🥃
 
@@ -384,44 +369,11 @@ image::images/bluff.gif[width=500]
 * Tests as documentation
 * Tests as acceptance for stories
 
-== Want to use it ? 👩‍🏭
+== Ready to use it ? 👩‍🏭
 
 image::images/banco.gif[width=500]
 
-
-=== How to use ? ⚒️
-
-https://hub.docker.com/r/lectratech/kapoeira[^]
-
-[source, bash]
-----
-docker run --rm -ti 
--v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
--e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
--e KAFKA_USER=<XXX> \
--e KAFKA_PASSWORD=<****> \
-lectratech/kapoeira
-----
-
-=== More options
-
-[source, bash]
-----
-docker run --rm -ti \
--v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
--v <PATH_TO_YOUR_REPORTS>:/reports \
--v /var/run/docker.sock:/var/run/docker.sock \
--e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
--e KAFKA_SCHEMA_REGISTRY_URL=<URL> \
--e JAAS_AUTHENT=<true(default) | false> \
--e KAFKA_USER=<XXX> \
--e KAFKA_PASSWORD=<****> \
--e LOGGING_LEVEL=<INFO (default) | ERROR | ...> \
--e THREADS=<8 (default) | ... > \
-lectratech/kapoeira
-----
-
-=== How to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[See here^] 
+=== Ready to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[See here^] 
 image::images/contribute.gif[width=500]
 
 == Thank you !
@@ -453,3 +405,11 @@ endif::[]
 ifdef::conf-bdxio[]
 TODO QR Code OpenFeedback
 endif::[]
+
+// TODO report (mettre code à coté ?)
+// Est-ce qu'on garde le impl false et true ? Voire pas démarrer le service (intéractif en montrant le docker compose)
+// toto dans report afficher que le outline en gros (burger)
+// todo gif flux kafka stream
+// TODO open feedback changer heure de fin
+// todo enlever qr code à la fin car open feedback
+//
