@@ -4,10 +4,10 @@ class MyKafkaStreamTest extends ... {
   private var outputTopic: TestOutputTopic[String, String] = _
   // init ...
 
-  "Nominal test" should "be ok" in {
+  "Any value" should "be suffixed with -suffix" in {
     inputTopic.pipeInput("myKey", "myValue")
 
     outputTopic.getQueueSize shouldBe 1
-    outputTopic.readKeyValue() shouldBe new KeyValue("myKey", "myNewValue")
+    outputTopic.readKeyValue() shouldBe new KeyValue("myKey", "myValue-suffix")
   }
 }

@@ -1,4 +1,4 @@
-= 🕺Kapoeira💃
+= 🕺image:images/kapoeira_logo_text.png[width=200]💃
 :source-highlighter: highlight.js
 :highlightjs-languages: bash, gherkin, javascript, json, scala
 :icons: font
@@ -83,7 +83,7 @@ image::images/take-away.gif[width=500]
 image::images/cine.gif[width=800]
 
 [.columns]
-=== Vector
+=== Connected Cutters
 
 [.column]
 image:images/vector.png[width=400]::
@@ -93,12 +93,10 @@ image:images/vector.png[width=400]::
 [.column width="30%"]
 image::images/combien.gif[width=300]
 
+=== Apache Kafka
+image::images/kafka.png[width=600]
 
-=== Enrich and collect data
-
-image::images/enrichData.png[width=800]
-
-=== Data pipeline
+=== Our data pipeline
 
 image::images/data-pipeline.png[width=800]
 
@@ -123,7 +121,6 @@ image::images/pipeline-example-poo.png[width=800]
 image::images/boucherie.gif[width=600]
 
 === Solution ?
-
 TESTS OUR STREAMS!
 
 === How to test ?
@@ -145,27 +142,24 @@ include::code/topology-driver.scala[]
 image::images/content-vomi.gif[width=400]
 
 
-=== ... But it's a mocked infrastructure
+=== ... But mocked infra ≠ integration with Kafka
 
 image::images/fail.jpeg[width=600]
 
-It did not test the *integration* with the Kafka cluster
-
-=== ... And only unit tests
+=== ... And only unit tests => How to test *several* streams ?
 
 image::images/end-to-end.png[width=600]
 
-How to test *several* streams ?
 
-=== ... And it's not for QA (=👮)
+=== ... OK for Scala DEV but not for QA (=👮)
 
-image::images/les-nuls-police.gif[width=500]
+image::images/les-nuls-police.gif[width=400]
 
-=== ... And it's technical code
+=== ... *Communication* between DEV/PO/QA ?
 
 image::images/simon-kara.gif[width=600]
 
-How to *communicate* with DEV/PO/QA ?
+Acceptance tests !
 
 == What do we need ?
 
@@ -186,7 +180,7 @@ image::images/karate.png[width=200]
 * https://youtu.be/Cnma3WbKvtE?si=TXYHGSpiib9SATIJ[Talk about Karate @BdxIO2018^]
 
 === Our context ≠ HTTP
-image::images/kafkalogo.jpg[width=300]
+image::images/kafkalogo.jpg[width=500]
 
 Integration with *Kafka Streams* !
 
@@ -198,32 +192,20 @@ include::features/example.feature[]
 ----
 
 === What is Kapoeira?
-
-Cucumber Scala using specific Gherkin DSL
-
-image::images/cucumber.png[width=200]
-
-=== What is Gherkin ?
-
-[source, gherkin]
-----
-include::features/CucumberExample.feature[]
-----
-
-=== What is Cucumber ?
-
-[source, scala]
-----
-include::code/CucumberStepDef.scala[]
-----
-
-=== How does it work ?
-
-image::images/archi.png[width=400]
-
-=== How does it work ?
-
 image::images/kapoeira-diagram.png[width=600]
+
+// TODO gif flux data
+// step 0 sans kapo et flux données
+// step 1 (background) kapo + create consumer & producer
+// step 2 produce data 
+// step 3 stream tranforme data en data2
+// step 4 kapo + consume data2
+// step 5 kapo assert
+
+=== What is Kapoeira?
+image::diagrams/archi-kapoeira.png[width=500]
+
+// TODO image drawio (à partir de kapoeira-diagram)
 
 === 2020 - Birth of Kapoeira
 image::images/young-chabat.jpg[width=300]
@@ -247,10 +229,11 @@ kafka-console-consumer \
   --from-beginning
 ----
 
-=== 2020 - Scala !
-image::images/scala.jpg[width=300]
+=== 2020 - Scala image:images/scala.svg[width=50]
 * Specific Scala implementation for Kafka Consumer/Producer
 * Better syntax with Gherkin Datatable
+
+image::images/datatable.png[width=400]
 
 === 2021 - ZIO - https://zio.dev/
 

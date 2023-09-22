@@ -15,4 +15,4 @@ Feature: My first Kapoeira feature
     Then expected records
       | topic_alias | key   | value  |
       | topic2-out  | myKey | result |
-    And assert result $ == "myNewValue"
+    And assert result $ == "myValue-suffix"
