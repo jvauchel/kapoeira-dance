@@ -192,7 +192,7 @@ include::features/example.feature[]
 ----
 
 === What is Kapoeira?
-image::images/kapoeira-diagram.png[width=600]
+image::images/kapoeira-flux.gif[width=600]
 
 // TODO gif flux data
 // step 0 sans kapo et flux données
@@ -330,7 +330,7 @@ image::diagrams/burger-quiz.svg[width=800]
 image::images/report-us6.png[width=325]
 
 [.columns]
-=== Autres features
+=== Other features
 
 [.column width="70%"]
 image::images/veracruz.gif[width=600]
