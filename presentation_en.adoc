@@ -194,13 +194,6 @@ include::features/example.feature[]
 === What is Kapoeira?
 image::images/kapoeira-flux.gif[width=600]
 
-// TODO gif flux data
-// step 0 sans kapo et flux données
-// step 1 (background) kapo + create consumer & producer
-// step 2 produce data 
-// step 3 stream tranforme data en data2
-// step 4 kapo + consume data2
-// step 5 kapo assert
 
 === What is Kapoeira?
 image::diagrams/archi-kapoeira.png[width=500]
