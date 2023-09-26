@@ -3,47 +3,56 @@
 :sectnums:
 :icons: font
 
-== Clean
+== Before demo
+=== Clean
 [source, bash]
 ----
 docker compose down
 ----
 
-== Fresh build
+=== Latest kapoeira docker version
+[source, bash]
+----
+docker pull lectratech/kapoeira
+----
+
+=== Fresh build
 [source, bash]
 ----
 docker compose build --no-cache
 ----
 
-== Infra Up
+=== Infra Up
 [source, bash]
 ----
 docker compose up -d
 ----
 
-== Open browser tabs
+=== Open browser tabs
 * file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/target/reports/
 * file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/target/reports/
 
-== Infra Down
+=== Infra Down
 [source, bash]
 ----
 docker compose down
 ----
 
-== Infra Up
+== Demo
+
+=== Infra Up
 [source, bash]
 ----
 docker compose up -d
 ----
 
-== Stop fries-factory
+=== Stop fries-factory
 [source, bash]
 ----
 docker compose stop fries-factory
 ----
 
-== Run kapoeira-fries
+=== Run kapoeira-fries
 [source, bash]
 ----
 docker compose restart kapoeira-fries
@@ -51,13 +60,13 @@ docker compose restart kapoeira-fries
 
 NOTE: check reports on failure
 
-== Run fries-factory
+=== Run fries-factory
 [source, bash]
 ----
 docker compose start fries-factory
 ----
 
-== Run kapoeira-fries
+=== Run kapoeira-fries
 [source, bash]
 ----
 docker compose restart kapoeira-fries
@@ -65,7 +74,7 @@ docker compose restart kapoeira-fries
 
 NOTE: check reports on success
 
-== Run kapoeira-burger
+=== Run kapoeira-burger
 [source, bash]
 ----
 docker compose restart kapoeira-burger
@@ -73,7 +82,7 @@ docker compose restart kapoeira-burger
 
 NOTE: check reports on success
 
-== Run kapoeira-end-to-end
+=== Run kapoeira-end-to-end
 [source, bash]
 ----
 docker compose restart kapoeira-end-to-end
@@ -81,7 +90,7 @@ docker compose restart kapoeira-end-to-end
 
 NOTE: check reports on success
 
-== Infra Down
+=== Infra Down
 [source, bash]
 ----
 docker compose down

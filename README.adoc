@@ -7,18 +7,27 @@ link:abstract_fr.adoc[FR^]
 
 == Slides
 === How to build HTML presentation
+.With Docker & Linux
 ----
 ./build-slides.sh
 ----
+
+NOTE: available in `public` folder
 
 === Generated slides
 https://jvauchel.github.io/kapoeira-dance/[^]
 
 == Demo - Burger Quiz
 
-NOTE: pre-requisites : Docker & Linux
+NOTE: pre-requisites : Docker & Docker Compose
 
 NOTE: step-by-step link:demo.adoc[here^]
+
+.Force build burger-quiz (with no cache)
+[source, bash]
+----
+docker compose build --no-cache
+----
 
 .Run an Kafka infrastructure & All Kapoeira features
 [source, bash]
@@ -32,16 +41,10 @@ docker compose up -d
 docker compose down
 ----
 
-.Force build burger-quiz (with no cache)
-[source, bash]
-----
-docker compose build --no-cache
-----
-
-NOTE: Check `target/reports/xxx/kapoeira-report.html` for Kapoeira reports
-
 .Re-run only Kapoeira features on fries-factory
 [source, bash]
 ----
 docker compose restart kapoeira-fries
 ----
+
+NOTE: Check `target/reports/xxx/kapoeira-report.html` for Kapoeira reports
