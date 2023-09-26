@@ -1,6 +1,6 @@
 = 🕺image:images/kapoeira_logo_text.png[width=200]💃
 :source-highlighter: highlight.js
-:highlightjs-languages: bash, gherkin, javascript, json, scala
+:highlightjs-languages: bash, gherkin
 :icons: font
 :burger-quiz-url: https://github.com/jvauchel/kapoeira-dance/blob/main/burger-quiz
 
@@ -257,6 +257,7 @@ icon:github[] https://github.com/lectra-tech/kapoeira
 ----
 docker run --rm -ti 
 -v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
+-v <PATH_TO_YOUR_REPORTS_FOLDER>:/reports \
 -e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
 -e KAFKA_USER=<XXX> \
 -e KAFKA_PASSWORD=<****> \
@@ -293,11 +294,18 @@ image::diagrams/fries-factory.svg[width=800]
 
 [.columns]
 === User Story n°1 - Report
-[.column]
-image::images/report-us1.2.png[width=450]
 
 [.column]
-image:images/rapport.gif[width=400] 
+++++
+<div class="noborder" style="overflow: auto; width: 800px; height: 500px;">
+++++
+image::images/report-us1.png[width=600]
+++++
+</div>
+++++
+
+[.column width="300"]
+image::images/rapport.gif[width=300]
 
 === Focus on burger image:images/sel-poivre.gif[width=200,float=right]
 image::diagrams/burger-factory.svg[width=800]
@@ -312,7 +320,13 @@ image::diagrams/burger-factory.svg[width=800]
 {burger-quiz-url}/burger-factory/it/features/burger-us2.feature[Solution^]
 
 === User Story n°2 - Report
-image::images/report-us4.png[width=375]
+++++
+<div class="noborder" style="overflow: auto; width: 800px; height: 500px;">
+++++
+image::images/report-us2.png[width=600]
+++++
+</div>
+++++
 
 === Focus on end-to-end test image:images/burger-quiz.gif[width=200,float=right]
 image::diagrams/burger-quiz.svg[width=800]
@@ -327,7 +341,13 @@ image::diagrams/burger-quiz.svg[width=800]
 {burger-quiz-url}/end-to-end/it/features/end-to-end-us3.feature[Solution^]
 
 === User Story n°3 - Report
-image::images/report-us6.png[width=325]
+++++
+<div class="noborder" style="overflow: auto; width: 800px; height: 500px;">
+++++
+image::images/report-us3.png[width=600]
+++++
+</div>
+++++
 
 [.columns]
 === Other features
@@ -406,10 +426,5 @@ ifdef::conf-bdxio[]
 TODO QR Code OpenFeedback
 endif::[]
 
-// TODO report (mettre code à coté ?)
-// Est-ce qu'on garde le impl false et true ? Voire pas démarrer le service (intéractif en montrant le docker compose)
-// toto dans report afficher que le outline en gros (burger)
-// todo gif flux kafka stream
 // TODO open feedback changer heure de fin
-// todo enlever qr code à la fin car open feedback
-//
+// TODO enlever qr code à la fin car open feedback

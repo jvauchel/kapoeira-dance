@@ -18,6 +18,8 @@ https://jvauchel.github.io/kapoeira-dance/[^]
 
 NOTE: pre-requisites : Docker & Linux
 
+NOTE: step-by-step link:demo.adoc[here^]
+
 .Run an Kafka infrastructure & All Kapoeira features
 [source, bash]
 ----

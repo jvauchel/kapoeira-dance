@@ -17,7 +17,7 @@ Feature: Fries 🍟 feature
       | topic_alias     | key | value  |
       | side-dishes-out | 🧑‍🍳  | result |
     And assert result $ == "🍟"
-
+    
   Scenario: Alternative
     When records with key and value are sent
       | topic_alias | key | value |

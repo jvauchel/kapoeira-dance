@@ -10,7 +10,6 @@ import java.time.Duration
 
 object FriesFactory extends KafkaStream {
 
-  val implementation: String = conf.getString("implementation")
   val topicConf: Config = conf.getConfig("topics")
   val topicPotato: String = topicConf.getString("potato")
   val topicSideDishes: String = topicConf.getString("side-dishes")
@@ -18,10 +17,9 @@ object FriesFactory extends KafkaStream {
   override def topology(builder: StreamsBuilder): Unit = {
     builder
       .stream[String, String](topicPotato)
-      .flatMapValues{ value => (value, implementation) match {
-          case ("🥔", "OK") => Some("🍟")
-          case (_, "OK") => Some(value)
-          case (_, _) => None
+      .mapValues{ value => value match {
+          case "🥔" => "🍟"
+          case _ => value
         }
       }
       .to(topicSideDishes)

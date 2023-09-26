@@ -76,7 +76,6 @@ services:
         condition: service_completed_successfully
     environment:
       KAFKA_BOOTSTRAP_SERVER: broker:29092
-      IMPLEMENTATION: ${FRIES_IMPL}
   burger-factory:
     build: burger-quiz/burger-factory
     container_name: burger-factory
