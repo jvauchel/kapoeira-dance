@@ -196,9 +196,7 @@ image::images/kapoeira-flux.gif[width=600]
 
 
 === What is Kapoeira?
-image::diagrams/archi-kapoeira.png[width=500]
-
-// TODO image drawio (à partir de kapoeira-diagram)
+image::diagrams/archi.gif[width=650]
 
 === 2020 - Birth of Kapoeira
 image::images/young-chabat.jpg[width=300]
