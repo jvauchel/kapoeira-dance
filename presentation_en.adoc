@@ -194,6 +194,8 @@ include::features/example.feature[]
 === What is Kapoeira?
 image::images/kapoeira-flux.gif[width=600]
 
+=== What is Kapoeira?
+image::images/kapoeira-test.gif[width=600]
 
 === What is Kapoeira?
 image::diagrams/kapoeira-archi-00.png[width=650]
@@ -356,12 +358,11 @@ image::images/report-us3.png[width=600]
 image::images/veracruz.gif[width=600]
 
 [.column width="30%"]
+* https://github.com/lectra-tech/kapoeira#73-avro-and-json-schema[Avro, json format message]
 * https://github.com/lectra-tech/kapoeira#75-assertions[Assertion json path]
 * https://github.com/lectra-tech/kapoeira#751-headers[Header kafka]
 * https://github.com/lectra-tech/kapoeira#77-call-scripts[Call external scripts]
-* https://github.com/lectra-tech/kapoeira#73-avro-and-json-schema[Avro, json format message]
 * https://github.com/lectra-tech/kapoeira#78-produce--consume-with-batches[Batch of records]
-
 
 == 🥦 REX 🥃
 
