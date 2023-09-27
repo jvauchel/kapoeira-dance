@@ -394,7 +394,7 @@ image::images/bluff.gif[width=500]
 
 image::images/banco.gif[width=500]
 
-=== Ready to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[See here^] 
+=== Ready to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[Here^] 
 image::images/contribute.gif[width=500]
 
 == Thank you !
