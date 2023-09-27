@@ -46,6 +46,14 @@ docker compose down
 docker compose up -d
 ----
 
+=== Run kapoeira-fries
+[source, bash]
+----
+docker compose restart kapoeira-fries
+----
+
+NOTE: check reports on success
+
 === Stop fries-factory
 [source, bash]
 ----
@@ -60,7 +68,7 @@ docker compose restart kapoeira-fries
 
 NOTE: check reports on failure
 
-=== Run fries-factory
+=== Start fries-factory
 [source, bash]
 ----
 docker compose start fries-factory
