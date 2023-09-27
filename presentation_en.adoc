@@ -358,11 +358,11 @@ image::images/report-us3.png[width=600]
 image::images/veracruz.gif[width=600]
 
 [.column width="30%"]
-* https://github.com/lectra-tech/kapoeira#73-avro-and-json-schema[Avro, json format message]
-* https://github.com/lectra-tech/kapoeira#75-assertions[Assertion json path]
-* https://github.com/lectra-tech/kapoeira#751-headers[Header kafka]
-* https://github.com/lectra-tech/kapoeira#77-call-scripts[Call external scripts]
-* https://github.com/lectra-tech/kapoeira#78-produce--consume-with-batches[Batch of records]
+* https://github.com/lectra-tech/kapoeira#73-avro-and-json-schema[Avro, json format message^]
+* https://github.com/lectra-tech/kapoeira#75-assertions[Assertion json path^]
+* https://github.com/lectra-tech/kapoeira#751-headers[Header kafka^]
+* https://github.com/lectra-tech/kapoeira#77-call-scripts[Call external scripts^]
+* https://github.com/lectra-tech/kapoeira#78-produce--consume-with-batches[Batch of records^]
 
 == 🥦 REX 🥃
 
@@ -401,31 +401,19 @@ image::images/contribute.gif[width=500]
 
 image::images/cauchemar.gif[width=500]
 
-[.columns]
+[background-color="white"]
 === Thanks for your feedback
-
-[.column width="70%"]
-icon:github[] https://github.com/lectra-tech/kapoeira[^] +
- +
-icon:github[] https://jvauchel.github.io/[^] +
-icon:github[] https://mrebiai.github.io/[^] +
-ifdef::conf-webinar[]
-icon:github[] https://github.com/fb33/[^] +
-endif::[]
- +
-icon:envelope[] vauchel.johanna@gmail.com +
-icon:envelope[] mehdi.rebiai.dev@gmail.com +
-ifdef::conf-webinar[]
-icon:envelope[] f.barbe@lectra.com +
-endif::[]
-
-[.column width="30%"]
-ifdef::conf-webinar[]
-image::images/WebinarQRCode.png[width=200]
-endif::[]
-ifdef::conf-bdxio[]
-TODO QR Code OpenFeedback
-endif::[]
+[cols="2,3,1"]
+|===
+|Slides   |icon:github[] repositories|Open +
+Feedback
+a|image:images/qrcode.png[width=300]
+a|* https://github.com/lectra-tech/kapoeira[^]
+* https://jvauchel.github.io/[^]
+* https://mrebiai.github.io/[^]
+ifdef::conf-webinar[* https://github.com/fb33/[^] +]
+a|ifdef::conf-webinar[image:images/WebinarQRCode.png[width=300]]
+ifdef::conf-bdxio[TODO QR Code Open Feedback]
+|===
 
 // TODO open feedback changer heure de fin
-// TODO enlever qr code à la fin car open feedback
