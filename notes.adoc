@@ -6,7 +6,8 @@
 * docker compose up -d avec le Impl à None
 * anticiper l'affichage des reports dans le browser
 
-== Déroulement de la demo
+== Déroulement de la demo 
+
 
 voir demo.sh
 
@@ -79,7 +80,7 @@ C'est rapide efficace et pas cher ! Regardez comme c'est beau tout ce scala.
 Bon on est content, on peut finir le talk là dessus ?
 
 
-Ben en fait c'est pas parfait, déjà, ça s'appuie sur des streams factices, et pas sur la vraie infrastructure avec le cluster Kakfa.
+Ben en fait c'est pas parfait, déjà, ça s'appuie sur kafka driver qui mocke une infra, et pas sur la vraie infrastructure avec le cluster Kakfa.
 
 Tu bluffes Martoni !
 
@@ -143,6 +144,11 @@ Au fur et à mesure qu'on utilise Kapoeira dans notre quotidien, on ajoute des f
 Et en 2023, on met Kapoeira à disposition de tout le monde.
 
 Et on espère que vous serez nombreux à utiliser et aussi améliorer notre outil.
+
+how to run :
+Voici la commande pour lancer l'image docker, vous précisez les volumes des features Kapoeira à lancer, et des rapports qui seront générés, suivies des parametres kafka. Il y a plus d'option sur le github.
+
+
 
 
 Assez de blabla, passons à la démo ! On va parler burger quizz, j'espère que vous avez faim.
