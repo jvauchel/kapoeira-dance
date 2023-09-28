@@ -77,6 +77,7 @@ image::images/take-away.gif[width=500]
 * Discover a new tool to *test* your kafka streams
 * Help you in your *communication* with PO/QA/DEV
 * *Tips* to use it every day
+* Demo Burger Quiz
 * Have a good time (we hope)
 
 == 📽️ Kapoeira story 🎬
@@ -316,7 +317,7 @@ image::diagrams/burger-factory.svg[width=800]
 
 * As a 🧑‍🍳
 * GIVEN my burger-factory
-* WHEN I send the ingredients (🍞,🍅,🥩) to it
+* WHEN I send the ingredients (🍞,🍅,🥩/🍗/🐟) to it
 * THEN I expect to have a delicious 🍔
 
 {burger-quiz-url}/burger-factory/it/features/burger-us2.feature[Solution^]
@@ -337,7 +338,7 @@ image::diagrams/burger-quiz.svg[width=800]
 
 * As a 🧑‍🍳
 * GIVEN my burger-quiz pipeline
-* WHEN I send the ingredients (🍞,🍅,🥩) and a 🥔 to it
+* WHEN I send the ingredients (🍞,🍅,🥩/🍗/🐟) and a 🥔 to it
 * THEN I expect to have a great meal (🍔 + 🍟)
 
 {burger-quiz-url}/end-to-end/it/features/end-to-end-us3.feature[Solution^]
