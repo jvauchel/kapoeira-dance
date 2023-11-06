@@ -40,6 +40,9 @@ endif::[]
 image::images/opensource.gif[width=500]
 
 
+// TODO le tissu https://www.youtube.com/watch?v=4LTBB13ZQX0
+// TODO Lectra entreprise à Cestas
+
 ifdef::conf-bdxio[]
 === Lectra
 * Member of https://naos-cluster.com/
