@@ -27,6 +27,7 @@ done
 cat videos.adoc >> index.adoc
 
 touch public/.nojekyll
+cp -r sounds public/ 
 
 docker run --rm --name $(uuidgen) -u $(id -u):$(id -g) -v $(pwd):/documents ${ASCIIDOCTOR_DOCKER_IMAGE} \
   asciidoctor -D public -o index.html index.adoc

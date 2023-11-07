@@ -6,7 +6,7 @@
 
 image::images/kapoeira.gif[]
 
-// TODO music d'intro qui se coupe à "Sais-tu danser la..."
+audio::sounds/carioca-intro.mp3[]
 
 == Presentation
 image::images/hello.gif[width=500]
@@ -430,3 +430,6 @@ ifdef::conf-webinar[* https://github.com/fb33/[^] +]
 a|image::images/qrcode-{confname}.png[width=300]
 |===
 
+image:images/au-revoir.gif[width=200, float=left]
+ 
+audio::sounds/carioca-end.mp3[] 
