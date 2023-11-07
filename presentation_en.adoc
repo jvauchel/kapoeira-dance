@@ -411,12 +411,11 @@ image::images/cauchemar.gif[width=500]
 |===
 |Slides   |icon:github[] repositories|Open +
 Feedback
-a|image:images/qrcode.png[width=300]
+a|image:images/qrcode-slides.png[width=300]
 a|* https://github.com/lectra-tech/kapoeira[^]
 * https://jvauchel.github.io/[^]
 * https://mrebiai.github.io/[^]
 ifdef::conf-webinar[* https://github.com/fb33/[^] +]
-a|ifdef::conf-webinar[image:images/WebinarQRCode.png[width=300]]
-ifdef::conf-bdxio[image:images/BDXIOQRCode.png[width=300]]
+a|image::images/qrcode-{confname}.png[width=300]
 |===
 
