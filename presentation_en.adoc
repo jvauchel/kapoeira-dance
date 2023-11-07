@@ -6,16 +6,10 @@
 
 image::images/kapoeira.gif[]
 
+// TODO music d'intro qui se coupe à "Sais-tu danser la..."
+
 == Presentation
 image::images/hello.gif[width=500]
-
-=== Presentation
-image::images/kara.jpeg[width=300]
-
-Mehdi Rebiai::
-* icon:github[] https://mrebiai.github.io/[^]
-* icon:envelope[] mehdi.rebiai.dev@gmail.com
-* Techlead & Data engineer at https://www.lectra.com[Lectra^]
 
 === Presentation
 
@@ -25,6 +19,14 @@ Johanna Vauchel::
 * icon:github[] https://jvauchel.github.io/[^]
 * icon:envelope[] vauchel.johanna@gmail.com
 * Data engineer at https://www.lectra.com[Lectra^] & speaker 🎤
+
+=== Presentation
+image::images/kara.jpeg[width=300]
+
+Mehdi Rebiai::
+* icon:github[] https://mrebiai.github.io/[^]
+* icon:envelope[] mehdi.rebiai.dev@gmail.com
+* Techlead & Data engineer at https://www.lectra.com[Lectra^]
 
 ifdef::conf-webinar[]
 === Presentation
@@ -36,19 +38,28 @@ François Barbe::
 * Principal Architect at https://www.lectra.com[Lectra^]
 endif::[]
 
+
 == Opensource at Lectra
 image::images/opensource.gif[width=500]
 
+ifndef::conf-webinar[]
+[.columns]
+=== https://www.lectra.com[Lectra^]
 
-// TODO le tissu https://www.youtube.com/watch?v=4LTBB13ZQX0
-// TODO Lectra entreprise à Cestas
+[.column width="70%"]
+Made in Bordeaux (Cestas) +
+image:images/lectra-4.0-mini.png[] +
+Solutions for Textile Industry +
+(Automotive / Fashion / Furniture) +
 
-ifdef::conf-bdxio[]
-=== Lectra
-* Member of https://naos-cluster.com/
-* Partner in the https://hermine-foss.org/ project
-* Github : https://github.com/lectra-tech/
-* Dockerhub : https://hub.docker.com/u/lectratech
+[.column width="30%"]
+image:images/tissu.gif[]
+
+=== OpenSource
+* Member of https://naos-cluster.com/[^]
+* Partner in the https://hermine-foss.org/[^] project
+* Github : https://github.com/lectra-tech/[^]
+* Dockerhub : https://hub.docker.com/u/lectratech[^]
 endif::[]
 
 
