@@ -5,9 +5,23 @@
 
 == Before demo
 === Clean
+.Clean infra
 [source, bash]
 ----
 docker compose down
+----
+
+.Clean folders
+[source, bash]
+----
+sudo rm -rf target
+sudo rm -rf public
+----
+
+=== Build slides
+[source]
+----
+./build-slides.sh
 ----
 
 === Latest kapoeira docker version
@@ -28,9 +42,22 @@ docker compose build --no-cache
 docker compose up -d
 ----
 
-=== Open browser tabs
+=== Open in
+==== Browser tabs
+* file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/public/index.html/
 * file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/target/reports/
+
+OR
+
+* file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/public/index.html/
 * file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/target/reports/
+
+
+==== VS Code
+* docker-compose.yml
+* burger-quiz/fries-factory/it/features/fries-us1.feature
+* burger-quiz/burger-factory/it/features/burger-us2.feature
+* burger-quiz/end-to-end/it/features/end-to-end-us3.feature
 
 === Infra Down
 [source, bash]
