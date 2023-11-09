@@ -54,6 +54,7 @@ OR
 
 
 ==== VS Code
+* demo.adoc
 * docker-compose.yml
 * burger-quiz/fries-factory/it/features/fries-us1.feature
 * burger-quiz/burger-factory/it/features/burger-us2.feature
