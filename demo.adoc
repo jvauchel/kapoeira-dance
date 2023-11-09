@@ -44,12 +44,12 @@ docker compose up -d
 
 === Open in
 ==== Browser tabs
-* file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/public/index.html/
+* file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/public/index.html
 * file:///home/mrebiai/github.com/jvauchel/kapoeira-dance/target/reports/
 
 OR
 
-* file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/public/index.html/
+* file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/public/index.html
 * file:///home/jvauchel/github.com/jvauchel/kapoeira-dance/target/reports/
 
 
