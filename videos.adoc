@@ -1,13 +1,13 @@
 
 == Videos
 
+=== BDX I/O - 2023
+
+video::xu7vXAO47TA?si=rifv3JT_XU4yclNg[youtube]
+
 === Webinar NAOS - Un Monde Ouvert 2023
 
 video::tvyfoFBFBvM?si=n9MH49pZDCHHJUwg[youtube]
-
-=== BDX I/O - 2023
-
-Coming Soon !
 
 === Capitole du libre - 2023
 
