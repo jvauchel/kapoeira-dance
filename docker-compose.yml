@@ -103,8 +103,7 @@ services:
       - ./burger-quiz/fries-factory/it/features:/features
       - ./target/reports/fries-factory:/reports
     environment:
-      KAFKA_BOOTSTRAP_SERVER: broker:29092
-      JAAS_AUTHENT: false
+      KAFKA_BOOTSTRAP_SERVERS: broker:29092
   kapoeira-burger:
     image: lectratech/kapoeira
     container_name: kapoeira-burger
@@ -115,8 +114,7 @@ services:
       - ./burger-quiz/burger-factory/it/features:/features
       - ./target/reports/burger-factory:/reports
     environment:
-      KAFKA_BOOTSTRAP_SERVER: broker:29092
-      JAAS_AUTHENT: false
+      KAFKA_BOOTSTRAP_SERVERS: broker:29092
   kapoeira-end-to-end:
     image: lectratech/kapoeira
     container_name: kapoeira-end-to-end
@@ -131,5 +129,4 @@ services:
       - ./burger-quiz/end-to-end/it/features:/features
       - ./target/reports/end-to-end:/reports
     environment:
-      KAFKA_BOOTSTRAP_SERVER: broker:29092
-      JAAS_AUTHENT: false
+      KAFKA_BOOTSTRAP_SERVERS: broker:29092

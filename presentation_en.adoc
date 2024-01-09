@@ -275,10 +275,8 @@ icon:github[] https://github.com/lectra-tech/kapoeira
 docker run --rm -ti \
 -v <PATH_TO_YOUR_FEATURES_FOLDER>:/features \
 -v <PATH_TO_YOUR_REPORTS_FOLDER>:/reports \
--e KAFKA_BOOTSTRAP_SERVER=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
--e KAFKA_USER=<XXX> \
--e KAFKA_PASSWORD=<****> \
-lectratech/kapoeira
+-e KAFKA_BOOTSTRAP_SERVERS=<HOST:PORT[,HOST2:PORT2,HOST3:PORT3,...]> \
+lectratech/kapoeira:latest
 ----
 
 === 2024 - New features
