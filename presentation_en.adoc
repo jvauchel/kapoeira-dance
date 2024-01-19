@@ -279,6 +279,8 @@ docker run --rm -ti \
 lectratech/kapoeira:latest
 ----
 
+More details on options https://github.com/lectra-tech/kapoeira?tab=readme-ov-file#docker-command[here^]
+
 === 2024 - New features
 
 image::images/simon.jpeg[width=200]
