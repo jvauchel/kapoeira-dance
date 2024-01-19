@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ASCIIDOCTOR_DOCKER_IMAGE="asciidoctor/docker-asciidoctor:1.55.0"
+ASCIIDOCTOR_DOCKER_IMAGE="asciidoctor/docker-asciidoctor:1.61.0"
 REVEALJS_DIR="https://cdn.jsdelivr.net/npm/reveal.js@4.1.2"
 CONFERENCES=("webinar" "bdxio" "capitoledulibre" "scalaio")
 
