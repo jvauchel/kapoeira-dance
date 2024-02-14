@@ -1,6 +1,15 @@
 
 == Videos
 
+=== Devoxx France - 2024
+Coming Soon !
+
+=== Scala.io - 2024
+https://scala.io/talks/kapoeira-with-kafka-streams
+
+=== Capitole du libre - 2023
+https://cfp.capitoledulibre.org/cdl-2023/talk/LF9VNX/
+
 === BDX I/O - 2023
 
 video::xu7vXAO47TA?si=rifv3JT_XU4yclNg[youtube]
@@ -8,8 +17,4 @@ video::xu7vXAO47TA?si=rifv3JT_XU4yclNg[youtube]
 === Webinar NAOS - Un Monde Ouvert 2023
 
 video::tvyfoFBFBvM?si=n9MH49pZDCHHJUwg[youtube]
-
-=== Capitole du libre - 2023
-
-Coming Soon !
 
