@@ -2,13 +2,15 @@
 == Videos
 
 === Devoxx France - 2024
+
 Coming Soon !
 
 === Scala.io - 2024
 https://scala.io/talks/kapoeira-with-kafka-streams
 
 === Capitole du libre - 2023
-https://cfp.capitoledulibre.org/cdl-2023/talk/LF9VNX/
+
+video::8EP-FgQzIO8[youtube]
 
 === BDX I/O - 2023
 
