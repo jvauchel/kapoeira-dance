@@ -1,27 +1,27 @@
 body:before {
     content: 'Youpi dansons la Kapoeira !';
-    font-family: Georgia, serif;
+    font-family: pirulen,Sans-serif;
     position: fixed;
     padding: 1em;
     width: 100%;
     bottom: 0;
     height: 2em;
-    color: #8B0000;
-    background-color: lightgrey;
+    color: #1AE77A;
+    background-color: black;
     text-align: center;
     font-size: 1rem;
 }
 
 body:after {
     content: 'Johanna Vauchel and Mehdi Rebiai';
-    font-family: Georgia, serif;
+    font-family: pirulen,Sans-serif;
     position: fixed;
     padding: 1em;
     bottom: 0;
     left: 1em;
     height: 2em;
     font-size: 1rem;
-    color: #8B0000;
+    color: #1AE77A;
     text-align: center;
 }
 
@@ -49,11 +49,13 @@ body:after {
 }
 
 .reveal h2 {
-    color: #8B0000;
+    color: #1AE77A;
+    font-family: pirulen,Sans-serif;
 }
 
 .reveal h1 {
-    color: #8B0000;
+    color: #1AE77A;
+    font-family: pirulen,Sans-serif;
 }
 
 .footer {

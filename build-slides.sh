@@ -2,7 +2,7 @@
 
 ASCIIDOCTOR_DOCKER_IMAGE="asciidoctor/docker-asciidoctor:1.61.0"
 REVEALJS_DIR="https://cdn.jsdelivr.net/npm/reveal.js@4.1.2"
-CONFERENCES=("webinar" "bdxio" "capitoledulibre" "scalaio")
+CONFERENCES=("webinar" "bdxio" "capitoledulibre" "scalaio" "devoxxfrance")
 
 cat summary.adoc > index.adoc
 
@@ -11,9 +11,10 @@ mkdir -p public
 
 for conf in "${CONFERENCES[@]}"
 do
+  sourceCss=$([[ -f "custom-${conf}.css" ]] && echo "custom-${conf}.css" || echo "custom.css")
   CONFERENCE_PNG_BASE64=$(cat images/logo-${conf}.png | base64 -w0) \
   QRCODE_PNG_BASE64=$(cat images/qrcode-slides.png | base64 -w0) \
-    envsubst < custom.css > public/custom-${conf}.css
+    envsubst < ${sourceCss} > public/custom-${conf}.css
   docker run --name $(uuidgen) --rm -u $(id -u):$(id -g) -v $(pwd):/documents ${ASCIIDOCTOR_DOCKER_IMAGE} \
     asciidoctor-revealjs -a data-uri -a revealjs_theme=simple \
     -a conf-${conf} -a confname=${conf} \
