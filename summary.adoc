@@ -1,6 +1,8 @@
 = 🕺 Youpi dansons la Kapoeira ! 💃
 :icons: font
 
+image::images/scalaio.jpg[width=500]
+
 Presentation of a Kafka integration test tool
 
 * icon:github[] https://github.com/jvauchel/kapoeira-dance : presentation sources
