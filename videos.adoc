@@ -6,7 +6,8 @@
 Coming Soon !
 
 === Scala.io - 2024
-https://scala.io/talks/kapoeira-with-kafka-streams
+
+video::BUQFj2jrGj8[youtube]
 
 === Capitole du libre - 2023
 
