@@ -38,7 +38,7 @@ François Barbe::
 * Principal Architect at https://www.lectra.com[Lectra^]
 endif::[]
 
-
+ifndef::conf-devoxxfrance[]
 == Opensource at Lectra
 image::images/opensource.gif[width=500]
 
@@ -62,7 +62,6 @@ image:images/tissu.gif[]
 * Dockerhub : https://hub.docker.com/u/lectratech[^]
 endif::[]
 
-
 ifdef::conf-webinar[]
 === Lectra
 image::images/lectra-4.0.png[width=800]
@@ -81,6 +80,7 @@ image:images/lectra-numbers.png[width=800]
 ** Partner in the https://hermine-foss.org/ project
 ** Kapoeira ...
 endif::[]
+endif::[]
 
 == Take Away 🎁
 image::images/take-away.gif[width=500]
@@ -97,6 +97,7 @@ image::images/take-away.gif[width=500]
 == 📽️ Kapoeira story 🎬
 image::images/cine.gif[width=800]
 
+ifndef::conf-devoxxfrance[]
 [.columns]
 === Connected Cutters
 
@@ -107,6 +108,31 @@ image:images/vector.png[width=400]::
 
 [.column width="30%"]
 image::images/combien.gif[width=300]
+
+endif::[]
+
+ifdef::conf-devoxxfrance[]
+
+=== image:images/logo-lectra.png[width=400] 
+
+At Bordeaux 🍷🏄‍♀️ 
+
+image::images/tissu.gif[]
+
+[.columns]
+=== Connected Cutters
+
+[.column]
+image:images/vector.png[width=400]::
+* Thousands of cutters
+* Millions events every day
+
+[.column width="30%"]
+image::images/combien.gif[width=300]
+
+
+
+endif::[]
 
 === Apache Kafka
 image::images/kafka.png[width=600]
@@ -192,7 +218,7 @@ image::images/karate.png[width=200]
 * HTTP-based APIs
 * Peter Thomas - 2017
 * Simple syntax (https://cucumber.io/docs/gherkin/reference/[Gherkin^])
-* https://youtu.be/Cnma3WbKvtE?si=TXYHGSpiib9SATIJ[Talk about Karate @BdxIO2018^]
+* https://youtu.be/NYlPxd5dZOU?si=-bYifwsTqme6Adrg[Talk about Karate @DevoxxFrance 2018^]
 
 === Our context ≠ HTTP
 image::images/kafkalogo.jpg[width=500]
@@ -224,6 +250,7 @@ image::diagrams/kapoeira-archi-02.png[width=650]
 === What is Kapoeira?
 image::diagrams/kapoeira-archi-03.png[width=650]
 
+ifndef::conf-devoxxfrance[]
 === 2020 - Birth of Kapoeira
 image::images/young-chabat.jpg[width=300]
 
@@ -260,6 +287,7 @@ image::images/zio.jpeg[width=300]
 * Add parallel mode
 * Batch to manage jointure in topics
 
+
 === 2023 - Open Source
 
 image::images/kapoeira_logo_text.png[width=200]
@@ -267,6 +295,18 @@ image::images/kapoeira_logo_text.png[width=200]
 icon:github[] https://github.com/lectra-tech/kapoeira
 
 🐳 https://hub.docker.com/r/lectratech/kapoeira[^]
+
+endif::[]
+
+ifdef::conf-devoxxfrance[]
+=== Inner to Open Source image:images/kapoeira_logo_text.png[width=100]
+
+image:images/scala.svg[width=100] image:images/zio.jpeg[width=200] image:images/cucumber.png[width=100]
+
+icon:github[] https://github.com/lectra-tech/kapoeira
+
+🐳 https://hub.docker.com/r/lectratech/kapoeira[^]
+endif::[]
 
 === How to run 
 
@@ -281,11 +321,13 @@ lectratech/kapoeira:latest
 
 More details on options https://github.com/lectra-tech/kapoeira?tab=readme-ov-file#docker-command[here^]
 
+ifndef::conf-devoxxfrance[]
 === 2024 - New features
 
 image::images/simon.jpeg[width=200]
 
 Thanks to you !
+endif::[]
 
 == Demo
 image::images/burger-quiz.gif[width=500]
@@ -345,8 +387,15 @@ image::images/report-us2.png[width=600]
 </div>
 ++++
 
-=== Focus on end-to-end test image:images/burger-quiz.gif[width=200,float=right]
-image::diagrams/burger-quiz.svg[width=800]
+[.columns]
+=== Focus on end-to-end test 
+
+[.column width="700"]
+image::diagrams/burger-quiz.svg[width=700]
+
+[.column]
+image:images/emile.gif[width=300,float=right]
+
 
 === User Story n°3
 
@@ -379,9 +428,12 @@ image::images/veracruz.gif[width=600]
 * https://github.com/lectra-tech/kapoeira#77-call-scripts[Call external scripts^]
 * https://github.com/lectra-tech/kapoeira#78-produce--consume-with-batches[Batch of records^]
 
+
 == 🥦 REX 🥃
 
 image::images/whisky.gif[width=500]
+
+ifndef::conf-devoxxfrance[]
 
 === (Grand) REX  image:images/red-is-dead.jpg[width=100]
 
@@ -405,12 +457,23 @@ image::images/bluff.gif[width=500]
 * Tests as documentation
 * Tests as acceptance for stories
 
+endif::[]
+
+ifdef::conf-devoxxfrance[]
+=== (Grand) REX  image:images/red-is-dead.jpg[width=100]
+
+* 🫶 Simple to use
+* 🤝 Used as acceptance tests 
+* 🔄 Used as end-to-end tests
+
+endif::[]
+
 == Ready to use it ? 👩‍🏭
 
 image::images/banco.gif[width=500]
 
-=== Ready to contribute ? https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[Here^] 
-image::images/contribute.gif[width=500]
+=== Ready to https://github.com/lectra-tech/kapoeira/blob/main/CONTRIBUTING.adoc[contribute^] ?
+image::images/contribute.gif[width=400]
 
 == Thank you !
 
