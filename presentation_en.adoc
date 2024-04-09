@@ -330,7 +330,7 @@ Thanks to you !
 endif::[]
 
 == Demo
-image::images/burger-quiz.gif[width=500]
+video::sounds/burger-quiz.mp4[width=500,opts=autoplay]
 
 === Demo pipeline image:images/burger-quiz.gif[width=200,float=right]
 image::diagrams/burger-quiz.svg[width=800]
