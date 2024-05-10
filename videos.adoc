@@ -3,7 +3,7 @@
 
 === Devoxx France - 2024
 
-Coming Soon !
+video::ELFCAgdgSro[youtube]
 
 === Scala.io - 2024
 
